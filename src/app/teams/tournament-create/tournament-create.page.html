@@ -1,0 +1,133 @@
+<app-form-headers [title]="'Add a Tournament/Series'"></app-form-headers>
+<ion-content class="gray-bg ion-padding">
+	<ion-card class="image-uploader">
+		<ion-card-content>
+			<div class="upload-image">
+				<img src="../../../assets/images/image-placeholder.png" class="placeholder-image" />
+				<img src="../../../assets/images/camera.png" class="camera-image" />
+				<p>Add Tournament Banner</p>
+			</div>
+		</ion-card-content>
+	</ion-card>
+	<ion-row>
+		<ion-col size="12">
+			<div class="tournament-logos">
+				<div class="banner-logos">
+					<img src="../../../assets/images/ipl.png" class="logo-image" />
+					<span>IPL</span>
+				</div>
+				<div class="banner-logos">
+					<img src="../../../assets/images/100.png" class="logo-image" />
+					<img src="../../../assets/images/camera.png" class="camera-image" />
+					<span>Add Logo</span>
+				</div>
+			</div>
+		</ion-col>
+	</ion-row>
+	<ion-card class="inputs-card">
+		<ion-card-content>
+			<ion-item lines="none">
+				<ion-input placeholder="Tournament Name *"></ion-input>
+				<img src="../../../assets/images/trophy.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item lines="none">
+				<ion-input placeholder="City Name *"></ion-input>
+				<img src="../../../assets/images/company.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item lines="none">
+				<ion-input placeholder="Ground *"></ion-input>
+				<img src="../../../assets/images/ground.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item lines="none">
+				<ion-input placeholder="Orgnizer Name *"></ion-input>
+				<img src="../../../assets/images/organization.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item lines="none">
+				<ion-input placeholder="Orgnizer Number *"></ion-input>
+				<img src="../../../assets/images/org_number.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item class="no-border" lines="none">
+				<ion-label text-wrap class="allow-whatsapp">Allow player to contact me on WhatsAPP for Team
+					Registeration</ion-label>
+				<ion-checkbox slot="start"></ion-checkbox>
+			</ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<ion-item lines="none">
+						<ion-datetime displayFormat="DD MMMM YYYY" value="" placeholder="Start Date *"></ion-datetime>
+						<img src="../../../assets/images/calendar.png" slot="start" class="input-icon" />
+					</ion-item>
+				</ion-col>
+				<ion-col size="6">
+					<ion-item lines="none">
+						<ion-datetime displayFormat="DD MMMM YYYY" value="" placeholder="End Date *"></ion-datetime>
+						<img src="../../../assets/images/calendar.png" slot="start" class="input-icon" />
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row class="category">
+				<ion-col size="12">
+					<h2>Tournament Category</h2>
+					<ion-chip>
+						<ion-label>Open</ion-label>
+					</ion-chip>
+					<ion-chip>
+						<ion-label>Corporate</ion-label>
+					</ion-chip>
+					<ion-chip>
+						<ion-label>Community</ion-label>
+					</ion-chip>
+					<ion-chip>
+						<ion-label>School</ion-label>
+					</ion-chip>
+					<ion-chip>
+						<ion-label>Box Cricket</ion-label>
+					</ion-chip>
+					<ion-chip>
+						<ion-label>Other</ion-label>
+					</ion-chip>
+				</ion-col>
+			</ion-row>
+			<ion-row class="ball-types">
+				<ion-col size="12">
+					<h2>Select Ball Type</h2>
+					<div class="balls">
+						<div class="ball">
+							<img src="../../../assets/images/tennis.png" (click)="selectBal('tennis',$event)" />
+						</div>
+						<div class="ball">
+							<img src="../../../assets/images/leather.png" (click)="selectBal('leather',$event)" />
+						</div>
+						<div class="ball">
+							<img src="../../../assets/images/other.png" (click)="selectBal('other',$event)" />
+						</div>
+					</div>
+				</ion-col>
+			</ion-row>
+			<ion-radio-group value="biff">
+				<ion-row class="match_types">
+					<ion-col size="6">
+						<ion-item class="no-border" lines="none">
+							<ion-label text-wrap>Limited Overs</ion-label>
+							<ion-radio slot="start" value="a" color="danger"></ion-radio>
+						</ion-item>
+					</ion-col>
+					<ion-col size="6">
+						<ion-item class="no-border" lines="none">
+							<ion-label text-wrap>Test Match</ion-label>
+							<ion-radio slot="start" value="b" color="danger"></ion-radio>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<ion-item class="no-border">
+							<ion-label position="floating">Addtags (maximum 5 tags)</ion-label>
+							<tag-input [(ngModel)]="itemsAsObjects"></tag-input>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+			</ion-radio-group>
+		</ion-card-content>
+	</ion-card>
+</ion-content>

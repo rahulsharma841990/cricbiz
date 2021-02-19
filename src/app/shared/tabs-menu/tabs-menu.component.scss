@@ -1,0 +1,29 @@
+@media only screen and (max-width: 385px) {
+    img.my-cricket-img {
+        margin-top: -49px;
+        width: 100px;
+        display: block;
+    }
+}
+.menu-row {
+    background: #fff;
+    height: 55px;
+    ion-col {
+        text-align: center;
+        padding-top: 10px;
+        p {
+            color: #000;
+            font-size: 13px;
+            font-weight: 500;
+        }
+    }
+    img.icons {
+        width: 25px;
+    }
+    @media only screen and (min-width: 385px) {
+        img.my-cricket-img {
+            width: 100px;
+            margin-top: -46px;
+        }
+    }
+}

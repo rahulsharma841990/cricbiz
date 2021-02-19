@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,64 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.gray-bg {
+    --background: #f1f0f1;
+    background: #f1f0f1;
+}
+
+.primary-input {
+    ion-input {
+        background-color: #fff;
+        border-radius: 12px;
+        height: 45px;
+        box-shadow: 0px 2px 5px 0px #ccc;
+    }
+    ion-label {
+        margin-bottom: 10px;
+        font-weight: 600;
+        display: inline-block;
+    }
+    ion-select {
+        width: 100%;
+    }
+    ion-item {
+        border-radius: 12px;
+        box-shadow: 0px 2px 5px 0px #ccc;
+    }
+    margin-bottom: 10px;
+}
+
+.primary-button {
+    --background: rgb(213, 31, 1);
+    --background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
+    text-transform: none;
+    font-weight: 500;
+}
+
+.content-pdding {
+    padding-left: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0px;
+}
+
+.text-gradiant {
+    background: #d61e00;
+    background: -webkit-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+    background: -moz-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+    background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.italic {
+    font-style: italic;
+}

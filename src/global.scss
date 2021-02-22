@@ -26,41 +26,48 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 .gray-bg {
-    --background: #f1f0f1;
-    background: #f1f0f1;
+  --background: #f1f0f1;
+  background: #f1f0f1;
 }
-
+.d-flex {
+  display: flex;
+}
 .primary-input {
-    ion-input {
-        background-color: #fff;
-        border-radius: 12px;
-        height: 45px;
-        box-shadow: 0px 2px 5px 0px #ccc;
-    }
-    ion-label {
-        margin-bottom: 10px;
-        font-weight: 600;
-        display: inline-block;
-    }
-    ion-select {
-        width: 100%;
-    }
-    ion-item {
-        border-radius: 12px;
-        box-shadow: 0px 2px 5px 0px #ccc;
-    }
+  ion-input {
+    background-color: #fff;
+    border-radius: 12px;
+    height: 45px;
+    box-shadow: 0px 2px 5px 0px #ccc;
+  }
+  ion-label {
     margin-bottom: 10px;
+    font-weight: 600;
+    display: inline-block;
+  }
+  ion-select {
+    width: 100%;
+  }
+  ion-item {
+    border-radius: 12px;
+    box-shadow: 0px 2px 5px 0px #ccc;
+  }
+  margin-bottom: 10px;
 }
 
 .primary-button {
-    --background: rgb(213, 31, 1);
-    --background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
-    text-transform: none;
-    font-weight: 500;
+  --background: rgb(213, 31, 1);
+  --background: linear-gradient(
+    180deg,
+    rgba(213, 31, 1, 1) 14%,
+    rgba(157, 50, 46, 1) 75%
+  );
+  text-transform: none;
+  font-weight: 500;
+  height: 45px;
 }
 
 .content-pdding {
-    padding-left: 15px;
+  padding-left: 15px;
 }
 
 h1,
@@ -70,18 +77,38 @@ h4,
 h5,
 h6,
 p {
-    margin: 0px;
+  margin: 0px;
 }
 
 .text-gradiant {
-    background: #d61e00;
-    background: -webkit-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
-    background: -moz-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
-    background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: #d61e00;
+  background: -webkit-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+  background: -moz-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+  background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .italic {
-    font-style: italic;
+  font-style: italic;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+.my-3 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.custom-forms {
+  ion-item {
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    flex: 1 1 100%;
+    .input-icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }

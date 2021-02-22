@@ -1,4 +1,8 @@
+import { SelectGroundComponent } from './../../shared/select-ground/select-ground.component';
+import { CityComponent } from './../../shared/city/city.component';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ModalController, NavController } from '@ionic/angular';
 import * as $ from 'jquery'
 
 @Component({
@@ -8,7 +12,8 @@ import * as $ from 'jquery'
 })
 export class TournamentCreatePage implements OnInit {
 
-	constructor() { }
+	constructor(public modalCtrl: ModalController, public navCtrl: NavController) {
+	}
 
 	ngOnInit() {
 
@@ -19,4 +24,21 @@ export class TournamentCreatePage implements OnInit {
 		$(event.target).parent('.ball').addClass('active')
 	}
 
+	async selectCity() {
+		let modal = await this.modalCtrl.create({
+			component: CityComponent
+		});
+		return await modal.present();
+	}
+
+	async selectGround() {
+		let modal = await this.modalCtrl.create({
+			component: SelectGroundComponent
+		});
+		return await modal.present();
+	}
+
+	next() {
+		this.navCtrl.navigateRoot('tournament-created', { animationDirection: 'forward' });
+	}
 }

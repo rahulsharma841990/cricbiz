@@ -1,29 +1,131 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
-
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
-
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
+	<ion-split-pane contentId="main-content">
+		<ion-menu contentId="main-content" type="overlay">
+			<ion-header>
+				<ion-toolbar class="menu-toolbar">
+					<ion-row class="user-details">
+						<ion-col size="3">
+							<img src="../assets/images/avatar.png" />
+						</ion-col>
+						<ion-col class="user-name-phone">
+							<h4>Rahul Sharma</h4>
+							<small>
+								<ion-icon name="call-outline" color="danger"></ion-icon>
+								+91-9888098880
+							</small>
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col size="9">
+							<ion-progress-bar color="danger" value="0.5"></ion-progress-bar>
+						</ion-col>
+						<ion-col size="3" class="ion-no-padding percentage-progress" align="center">
+							50%
+						</ion-col>
+					</ion-row>
+				</ion-toolbar>
+			</ion-header>
+			<ion-content>
+				<ion-row>
+					<ion-col>
+						<ion-list class="menu-items">
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/live-contest.png" slot="start" />
+								<ion-label>Live Contest</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/gift-pro.png" slot="start" />
+								<ion-label>Gift a PRO Membership</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/add-tournament.png" slot="start" />
+								<ion-label>Add a Tournament</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/start-match.png" slot="start" />
+								<ion-label>Start a Match</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/my-tournaments.png" slot="start" />
+								<ion-label>My Tournament</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/my-matches.png" slot="start" />
+								<ion-label>My Matches</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/my-teams.png" slot="start" />
+								<ion-label>My Terms</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/my-insight.png" slot="start" />
+								<ion-label>My Insights</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/find-friend.png" slot="start" />
+								<ion-label>Find Friends</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/cricket-association.png" slot="start" />
+								<ion-label>Cricket Associations</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/cricket-club.png" slot="start" />
+								<ion-label>Cricket Club</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/premium-features.png" slot="start" />
+								<ion-label>Premium Features</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/news.png" slot="start" />
+								<ion-label>News</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/emerging.png" slot="start" />
+								<ion-label>Emerging Cricket</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/quizzes.png" slot="start" />
+								<ion-label>Quizzes</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/polls.png" slot="start" />
+								<ion-label>Polls</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/cricket-tips.png" slot="start" />
+								<ion-label>Cricket Tips</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/share-app.png" slot="start" />
+								<ion-label>Share The App</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/rate-the-app.png" slot="start" />
+								<ion-label>Rate The App</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/t-shirt.png" slot="start" />
+								<ion-label>Official T-Shirts</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/follow-us.png" slot="start" />
+								<ion-label>Follow Us</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/contact-us.png" slot="start" />
+								<ion-label>Contact Us</ion-label>
+							</ion-item>
+							<ion-item button lines="none">
+								<img src="../assets/images/sidemenus/logout.png" slot="start" />
+								<ion-label>Logout</ion-label>
+							</ion-item>
+						</ion-list>
+					</ion-col>
+				</ion-row>
+			</ion-content>
+		</ion-menu>
+		<ion-router-outlet id="main-content"></ion-router-outlet>
+	</ion-split-pane>
 </ion-app>

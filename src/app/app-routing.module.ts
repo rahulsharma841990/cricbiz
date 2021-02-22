@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tournament-create',
+    redirectTo: 'tournaments',
     pathMatch: 'full'
   },
   {
@@ -18,6 +18,18 @@ const routes: Routes = [
   {
     path: 'tournament-create',
     loadChildren: () => import('./teams/tournament-create/tournament-create.module').then(m => m.TournamentCreatePageModule)
+  },
+  {
+    path: 'tournament-created',
+    loadChildren: () => import('./teams/tournament-created/tournament-created.module').then(m => m.TournamentCreatedPageModule)
+  },
+  {
+    path: 'my-profile',
+    loadChildren: () => import('./profile/my-profile/my-profile.module').then(m => m.MyProfilePageModule)
+  },
+  {
+    path: 'tournaments',
+    loadChildren: () => import('./teams/tournaments/tournaments.module').then(m => m.TournamentsPageModule)
   }
 ];
 

@@ -30,11 +30,11 @@
 				<ion-input placeholder="Tournament Name *"></ion-input>
 				<img src="../../../assets/images/trophy.png" slot="start" class="input-icon" />
 			</ion-item>
-			<ion-item lines="none">
+			<ion-item lines="none" (click)="selectCity()">
 				<ion-input placeholder="City Name *"></ion-input>
 				<img src="../../../assets/images/company.png" slot="start" class="input-icon" />
 			</ion-item>
-			<ion-item lines="none">
+			<ion-item lines="none" (click)="selectGround()">
 				<ion-input placeholder="Ground *"></ion-input>
 				<img src="../../../assets/images/ground.png" slot="start" class="input-icon" />
 			</ion-item>
@@ -94,12 +94,15 @@
 					<div class="balls">
 						<div class="ball">
 							<img src="../../../assets/images/tennis.png" (click)="selectBal('tennis',$event)" />
+							<p>Tennis</p>
 						</div>
 						<div class="ball">
 							<img src="../../../assets/images/leather.png" (click)="selectBal('leather',$event)" />
+							<p>Leather</p>
 						</div>
 						<div class="ball">
 							<img src="../../../assets/images/other.png" (click)="selectBal('other',$event)" />
+							<p>Other</p>
 						</div>
 					</div>
 				</ion-col>
@@ -123,11 +126,23 @@
 					<ion-col>
 						<ion-item class="no-border">
 							<ion-label position="floating">Addtags (maximum 5 tags)</ion-label>
-							<tag-input [(ngModel)]="itemsAsObjects"></tag-input>
+							<ion-input></ion-input>
 						</ion-item>
+						<small>Reference site about Lorem Ipsum, giving information on its origins, as well
+							as a random Lipsum generator.</small>
+						<ion-item lines="none" class="more-details">
+							<ion-textarea placeholder="Add more details like prizes, awards, entry fees, rule, etc."
+								rows="5"></ion-textarea>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<ion-button class="primary-button next-button" expand="block" (click)="next()">NEXT</ion-button>
 					</ion-col>
 				</ion-row>
 			</ion-radio-group>
 		</ion-card-content>
 	</ion-card>
 </ion-content>
+<app-tabs-menu></app-tabs-menu>

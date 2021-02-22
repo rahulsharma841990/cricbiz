@@ -1,3 +1,5 @@
+import { SelectGroundComponent } from './../select-ground/select-ground.component';
+import { CityComponent } from './../city/city.component';
 import { FormHeadersComponent } from './../form-headers/form-headers.component';
 import { TabsMenuComponent } from './../tabs-menu/tabs-menu.component';
 import { HeaderComponent } from './../header/header.component';
@@ -7,11 +9,23 @@ import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
-  declarations: [HeaderComponent, TabsMenuComponent, FormHeadersComponent],
+  declarations: [
+    HeaderComponent,
+    TabsMenuComponent,
+    FormHeadersComponent,
+    CityComponent,
+    SelectGroundComponent
+  ],
   imports: [
     CommonModule,
     IonicModule
   ],
-  exports: [HeaderComponent, TabsMenuComponent, FormHeadersComponent]
+  exports: [
+    HeaderComponent,
+    TabsMenuComponent,
+    FormHeadersComponent,
+    CityComponent,
+    SelectGroundComponent
+  ]
 })
 export class SharedModule { }

@@ -2,10 +2,11 @@
 	<ion-toolbar>
 		<ion-row class="header-row">
 			<ion-col size="4">
-				<img src="../../../assets/images/menu.svg" class="menu-icon" />
+				<img src="../../../assets/images/menu.svg" class="menu-icon" (click)="showMenu()" />
 			</ion-col>
 			<ion-col size="4"><img src="../../../assets/images/logo.png" class="logo-image" /></ion-col>
 			<ion-col size="4">
+				<img src="../../../assets/images/search-glass.png" class="search-bar" *ngIf="showsearch == 'true'" />
 				<img src="../../../assets/images/notification.png" class="notification" />
 				<small class="badge">05</small>
 			</ion-col>

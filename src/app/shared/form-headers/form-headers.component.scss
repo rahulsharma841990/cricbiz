@@ -10,3 +10,13 @@
         color: #cf2106;
     }
 }
+
+.redBg {
+    --background: #cf2106;
+    ion-title {
+        color: #fff;
+    }
+    ion-back-button {
+        color: #fff;
+    }
+}

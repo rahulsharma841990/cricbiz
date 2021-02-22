@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, MenuController } from '@ionic/angular';
 
 @Component({
 	selector: 'app-dashboard',
@@ -26,9 +26,12 @@ export class DashboardPage implements OnInit {
 			}
 		}
 	};
-	constructor(public navCtrl: NavController) { }
+	constructor(public navCtrl: NavController, public menu: MenuController) {
+		this.menu.enable(true);
+	}
 
 	ngOnInit() {
+		// document.body.classList.toggle('dark');
 	}
 
 	createTournament() {

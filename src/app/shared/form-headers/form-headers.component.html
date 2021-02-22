@@ -1,6 +1,6 @@
 <ion-header>
-	<ion-toolbar class="header-toolbar">
-		<ion-back-button icon="chevron-back"></ion-back-button>
+	<ion-toolbar class="header-toolbar" [ngClass]="customclass">
+		<ion-back-button icon="chevron-back" (click)="goBack()" *ngIf="backbutton != 'false'"></ion-back-button>
 		<ion-title>{{ title }}</ion-title>
 	</ion-toolbar>
 </ion-header>

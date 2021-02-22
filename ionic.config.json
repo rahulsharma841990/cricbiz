@@ -1,5 +1,7 @@
 {
   "name": "cricbiz",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

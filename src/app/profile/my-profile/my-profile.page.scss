@@ -1,0 +1,452 @@
+/**
+* Profile Header Satart HEre
+*/
+.profile-header {
+    height: 290px;
+    width: 100%;
+    background: url("../../../assets/images/ground-images.png") center/cover no-repeat;
+}
+
+.profile-header:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(72, 17, 3, 0.9);
+}
+
+.back-forward {
+    img.left {
+        width: 22px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    h3 {
+        color: #fff;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+    img.right {
+        width: 26px;
+        transform: rotate(180deg);
+    }
+    .text {
+        padding-top: 18px;
+    }
+
+    .right-arrow {
+        padding-top: 20px;
+    }
+}
+
+.profile-image {
+    .profile-image-canvas {
+        width: 80px;
+        height: 80px;
+        border-radius: 100px;
+        overflow: hidden;
+        margin: 0 auto;
+        position: relative;
+    }
+    img.user-image {
+        max-width: 162px;
+        position: relative;
+        top: -2px;
+        margin: 0 auto;
+        left: -51%;
+    }
+    .user-details {
+        color: #fff;
+        margin-top: -30px;
+        h3 {
+            font-size: 18px;
+        }
+        small {
+            display: block;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+    }
+
+    .edit-pencil {
+        position: relative;
+        width: 34px;
+        bottom: 33px;
+        right: -12px;
+    }
+    .pro-badge {
+        background-color: red;
+        position: relative;
+        top: -98px;
+        right: -54px;
+        font-size: 11px;
+        padding: 3px;
+        border-radius: 100px;
+        width: 38px;
+        display: inline-block;
+        color: #fff;
+        font-weight: 600;
+        line-height: 9px;
+        height: 18px;
+    }
+}
+
+.divider {
+    width: 90%;
+    margin: 0 auto;
+    background: #ffff;
+    position: relative;
+    margin-top: 10px;
+}
+.followers-text {
+    margin-top: 7px;
+    color: #fff;
+    h4 {
+        font-size: 16px;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+
+/**
+* Profile Headers End
+*/
+
+//Highlights Card
+.highlights-card {
+    border-radius: 10px;
+    ion-card-content {
+        padding-left: 10px;
+    }
+    .highlight-title {
+        padding-left: 10px;
+        h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 19px;
+        }
+        p {
+            font-weight: 500;
+            margin-top: 5px;
+            color: #000;
+        }
+    }
+    .highlight-calander {
+        margin-top: 15px;
+        img {
+            width: 70px;
+        }
+        p {
+            font-weight: 400;
+            color: #000;
+        }
+    }
+}
+
+//Pro Member Card
+.pro-membership-card {
+    border-radius: 10px;
+    --background: #05430b;
+    .membership-title {
+        color: #fff;
+        h4 {
+            font-size: 19px;
+            font-weight: 500;
+        }
+    }
+    .pro-price {
+        margin-top: 8px;
+        color: #f8f24f;
+        .price {
+            font-size: 23px;
+            font-weight: 500;
+        }
+        .white-or {
+            color: #fff;
+        }
+    }
+    .pro-details {
+        color: #fff;
+        font-weight: 400;
+        .pro-button {
+            --border-radius: 40px;
+            height: 44px;
+            width: 153px;
+        }
+    }
+}
+
+//Profile Card
+.profile-detials-card {
+    border-radius: 10px;
+    .profile-edit-title {
+        padding: 10px 10px 0px 10px;
+        h4 {
+            color: var(--primary-color);
+            font-size: 17px;
+            font-weight: 500;
+        }
+        img {
+            width: 25px;
+        }
+    }
+    .profile-details-table {
+        table {
+            width: 100%;
+            td {
+                border-bottom: 1px solid #ccc;
+                border-top: 1px solid #ccc;
+            }
+            tr {
+                height: 34px;
+                td:nth-child(1) {
+                    width: 130px;
+                    border-right: 1px solid #ccc;
+                    padding-left: 20px;
+                    font-weight: 500;
+                    color: #000;
+                }
+                td:nth-child(2) {
+                    padding-left: 30px;
+                }
+            }
+        }
+    }
+
+    .profile-progress-bar {
+        padding: 21px 0px 0px 15px;
+        .profile-progress {
+            --background: #efefef;
+            --progress-background: #d22004;
+            border-radius: 50px;
+            height: 13px;
+        }
+    }
+    .percent-complete {
+        p {
+            font-weight: 600;
+            color: #000;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+    }
+    .complete-text {
+        p {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 1px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Connections Card
+.connections-card {
+    border-radius: 10px;
+    padding-bottom: 15px;
+    .connections-title {
+        padding: 10px 0px 10px 10px;
+        h4 {
+            font-size: 19px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+    }
+    .connection-divider {
+        background: #ccc;
+        margin-top: -2px;
+    }
+    .connections-list {
+        margin-top: 13px;
+        ion-col {
+            display: flex;
+            justify-content: center;
+        }
+        .connection-canvas {
+            border-radius: 100px;
+            height: 80px;
+            width: 80px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid var(--primary-color);
+            float: left;
+            margin-right: -18px;
+            margin-left: -18px;
+            img.connection {
+                max-width: 84px;
+                position: relative;
+                top: -13px;
+            }
+        }
+    }
+    .connection-text {
+        p {
+            width: 70%;
+            color: #000;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+    }
+}
+
+// Badge Card
+.badges-card {
+    border-radius: 10px;
+    padding-bottom: 15px;
+    .badge-title {
+        padding: 10px 0px 10px 10px;
+        h4 {
+            font-size: 19px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+    }
+    .badge-divider {
+        background: #ccc;
+        margin-top: -2px;
+    }
+    .badges-list {
+        margin-top: 24px;
+        ion-col {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+        .badge-canvas {
+            position: relative;
+            float: left;
+            margin-right: -18px;
+            margin-left: -18px;
+            img.badge {
+                max-width: 84px;
+                position: relative;
+                top: -13px;
+            }
+        }
+    }
+    .badge-text {
+        p {
+            width: 70%;
+            color: #000;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+    }
+}
+
+// Scan Card
+.scan-tag-card {
+    border-radius: 10px;
+    padding-bottom: 15px;
+    .scan-tag-title {
+        padding: 8px 0px 8px 10px;
+        h4 {
+            font-size: 19px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        .scan-tag-actions {
+            img {
+                width: 23px;
+                margin-right: 10px;
+            }
+        }
+    }
+    .logout-buttons {
+        margin-top: 50px;
+    }
+    .scan-tag-divider {
+        background: #ccc;
+        margin-top: -2px;
+    }
+    .scan-tag-content {
+        padding-top: 15px;
+        p {
+            width: 80%;
+            color: #000;
+            margin: 0 auto;
+        }
+        h4 {
+            color: #000;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        small {
+            color: #525252;
+            font-weight: 500;
+        }
+        .user-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 100px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 10px;
+            img {
+                max-width: 162px;
+                position: relative;
+                top: -2px;
+                margin: 0 auto;
+                left: -51%;
+            }
+        }
+    }
+    .qr-code {
+        img {
+            width: 200px;
+            border: 2px solid var(--primary-color);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .qr-text {
+            font-size: 17px;
+        }
+    }
+}
+
+// Pin Card
+.pin-card {
+    border-radius: 10px;
+    padding-bottom: 15px;
+    .pin-card-title {
+        padding: 8px 0px 8px 10px;
+        h4 {
+            font-size: 19px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+    }
+    .pin-card-divider {
+        background: #ccc;
+        margin-top: -2px;
+    }
+
+    .pin-input {
+        margin-top: 25px;
+        ion-input {
+            border-radius: 8px;
+            height: 38px;
+            border: 2px solid #ccc;
+            width: 60%;
+            margin: 0 auto;
+            font-size: 22px;
+            letter-spacing: 30px;
+            text-align: center;
+        }
+        ion-input::placeholder {
+            padding-top: 10px;
+        }
+        p {
+            width: 80%;
+            margin: 0 auto;
+            color: #000;
+            margin-top: 10px;
+            font-size: 14px;
+            margin-top: 18px;
+        }
+    }
+}

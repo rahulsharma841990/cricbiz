@@ -1,0 +1,16 @@
+.segments-container {
+    width: 100%;
+    overflow: scroll;
+    display: grid;
+    .tournament-tabs {
+        margin-top: 20px;
+        ion-segment-button {
+            --background-checked: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
+            --border-radius: 100px;
+            --border-width: 0px;
+            --color-checked: #fff;
+            --padding-end: 20px;
+            --indicator-height: 0px;
+        }
+    }
+}

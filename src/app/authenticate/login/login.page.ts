@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
 	selector: 'app-login',
@@ -8,12 +8,16 @@ import { MenuController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-	constructor(public menu: MenuController) {
+	constructor(public menu: MenuController, public navCtrl: NavController) {
 		this.menu.enable(false);
 	}
 
 	ngOnInit() {
 		// document.body.classList.toggle('dark');
+	}
+
+	gotoDashboard() {
+		this.navCtrl.navigateRoot('dashboard', { animationDirection: 'forward' })
 	}
 
 }

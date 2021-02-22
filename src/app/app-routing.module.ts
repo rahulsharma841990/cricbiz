@@ -33,6 +33,10 @@ const routes: Routes = [
   },  {
     path: 'team-create',
     loadChildren: () => import('./teams/team-create/team-create.module').then( m => m.TeamCreatePageModule)
+  },
+  {
+    path: 'type-of-team',
+    loadChildren: () => import('./teams/type-of-team/type-of-team.module').then( m => m.TypeOfTeamPageModule)
   }
 
 ];

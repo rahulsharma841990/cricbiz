@@ -1,0 +1,41 @@
+.full-page {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 100px);
+  .round-img {
+    div {
+      width: 90px;
+      height: 90px;
+      background: var(--bg);
+      border-radius: 50%;
+
+      svg {
+        width: 40px;
+        fill: var(--dark-gray);
+      }
+    }
+    color: var(--dark-gray);
+  }
+  .active-img {
+    color: var(--primary-color);
+
+    div {
+      border: 2px solid var(--primary-color);
+      background: none;
+
+      svg {
+        fill: var(--primary-color);
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .series {
+    border-radius: 8px;
+    height: 48px;
+    img {
+      width: 30px;
+    }
+  }
+}

@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'type-of-team',
     loadChildren: () => import('./teams/type-of-team/type-of-team.module').then( m => m.TypeOfTeamPageModule)
+  },
+  {
+    path: 'add-friends',
+    loadChildren: () => import('./teams/add-friends/add-friends.module').then( m => m.AddFriendsPageModule)
   }
 
 ];

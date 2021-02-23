@@ -66,6 +66,19 @@
   height: 45px;
 }
 
+.primary-button-round {
+  background: linear-gradient(
+    180deg,
+    rgba(213, 31, 1, 1) 14%,
+    rgba(157, 50, 46, 1) 75%
+  );
+  color: #fff;
+  text-transform: none;
+  font-weight: normal;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+}
+
 .dark-button {
   --background: #2a2a2a;
   --background: linear-gradient(180deg, #2a2a2a, #4d4d4d 75%);
@@ -139,4 +152,7 @@ p {
 .shadow-1 {
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
     rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px;
+}
+.text-center {
+  text-align: center;
 }

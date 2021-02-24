@@ -41,6 +41,14 @@ const routes: Routes = [
   {
     path: 'add-friends',
     loadChildren: () => import('./teams/add-friends/add-friends.module').then( m => m.AddFriendsPageModule)
+  },
+  {
+    path: 'online-players',
+    loadChildren: () => import('./teams/online-players/online-players.module').then( m => m.OnlinePlayersPageModule)
+  },
+  {
+    path: 'add-player-bbl',
+    loadChildren: () => import('./teams/add-player-bbl/add-player-bbl.module').then( m => m.AddPlayerBblPageModule)
   }
 
 ];

@@ -1,0 +1,19 @@
+.players {
+  width: 90%;
+  border-radius: 6px;
+  padding: 1rem 0;
+  margin: 1rem auto;
+  background: #fff;
+  .player {
+    &-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    &-details {
+      h2 {
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -30,7 +30,27 @@ const routes: Routes = [
   {
     path: 'tournaments',
     loadChildren: () => import('./teams/tournaments/tournaments.module').then(m => m.TournamentsPageModule)
+  },  {
+    path: 'team-create',
+    loadChildren: () => import('./teams/team-create/team-create.module').then( m => m.TeamCreatePageModule)
+  },
+  {
+    path: 'type-of-team',
+    loadChildren: () => import('./teams/type-of-team/type-of-team.module').then( m => m.TypeOfTeamPageModule)
+  },
+  {
+    path: 'add-friends',
+    loadChildren: () => import('./teams/add-friends/add-friends.module').then( m => m.AddFriendsPageModule)
+  },
+  {
+    path: 'online-players',
+    loadChildren: () => import('./teams/online-players/online-players.module').then( m => m.OnlinePlayersPageModule)
+  },
+  {
+    path: 'add-player-bbl',
+    loadChildren: () => import('./teams/add-player-bbl/add-player-bbl.module').then( m => m.AddPlayerBblPageModule)
   }
+
 ];
 
 @NgModule({

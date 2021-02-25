@@ -49,6 +49,14 @@ const routes: Routes = [
   {
     path: 'add-player-bbl',
     loadChildren: () => import('./teams/add-player-bbl/add-player-bbl.module').then( m => m.AddPlayerBblPageModule)
+  },
+  {
+    path: 'starta-match',
+    loadChildren: () => import('./teams/starta-match/starta-match.module').then( m => m.StartaMatchPageModule)
+  },
+  {
+    path: 'select-team-b',
+    loadChildren: () => import('./teams/select-team-b/select-team-b.module').then( m => m.SelectTeamBPageModule)
   }
 
 ];

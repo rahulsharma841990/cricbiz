@@ -113,6 +113,9 @@ p {
 .italic {
   font-style: italic;
 }
+.mt-1 {
+  margin-top: 1rem;
+}
 .mt-3 {
   margin-top: 3rem;
 }
@@ -195,4 +198,12 @@ p {
 }
 .btn-light-rounded {
   background: #fff;
+}
+
+.border-radius {
+  border-radius: 50%;
+}
+
+.vs {
+  font-size: 30px;
 }

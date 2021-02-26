@@ -1,19 +1,13 @@
-<app-form-headers [title]="'Online Players'"></app-form-headers>
+<app-form-headers [title]="'Select Stricker'"></app-form-headers>
 
 <ion-content class="gray-bg">
   <div class="players">
-    <ion-row>
-      <ion-col size="12">
-        <ion-searchbar class="searchbox mb-1"></ion-searchbar>
-      </ion-col>
-    </ion-row>
     <ion-card class="highlights-card">
       <ion-card-content class="card-content">
         <div class="d-flex gap-1 ion-align-items-center player">
           <img src="assets/images/avatar.png" class="player-photo" />
           <div class="player-details">
             <h2>Hardik Pandya</h2>
-            <span>(India)</span>
           </div>
         </div>
       </ion-card-content>
@@ -24,7 +18,6 @@
           <img src="assets/images/avatar.png" class="player-photo" />
           <div class="player-details">
             <h2>Hardik Pandya</h2>
-            <span>(India)</span>
           </div>
         </div>
       </ion-card-content>
@@ -35,7 +28,6 @@
           <img src="assets/images/avatar.png" class="player-photo" />
           <div class="player-details">
             <h2>Hardik Pandya</h2>
-            <span>(India)</span>
           </div>
         </div>
       </ion-card-content>
@@ -46,7 +38,6 @@
           <img src="assets/images/avatar.png" class="player-photo" />
           <div class="player-details">
             <h2>Hardik Pandya</h2>
-            <span>(India)</span>
           </div>
         </div>
       </ion-card-content>
@@ -54,8 +45,8 @@
   </div>
   <ion-row>
     <ion-col size="12">
-      <ion-button expand="full" [routerLink]="['/add-player-bbl']"
-        >NEXT</ion-button
+      <ion-button expand="full" [routerLink]="['/starta-match']"
+        >Start A Match</ion-button
       >
     </ion-col>
   </ion-row>

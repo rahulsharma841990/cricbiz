@@ -57,6 +57,14 @@ const routes: Routes = [
   {
     path: 'select-team-b',
     loadChildren: () => import('./teams/select-team-b/select-team-b.module').then( m => m.SelectTeamBPageModule)
+  },
+  {
+    path: 'select-captain',
+    loadChildren: () => import('./teams/select-captain/select-captain.module').then( m => m.SelectCaptainPageModule)
+  },
+  {
+    path: 'select-stricker',
+    loadChildren: () => import('./teams/select-stricker/select-stricker.module').then( m => m.SelectStrickerPageModule)
   }
 
 ];

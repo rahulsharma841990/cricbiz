@@ -65,6 +65,10 @@ const routes: Routes = [
   {
     path: 'select-stricker',
     loadChildren: () => import('./teams/select-stricker/select-stricker.module').then( m => m.SelectStrickerPageModule)
+  },
+  {
+    path: 'otp',
+    loadChildren: () => import('./authenticate/otp/otp.module').then( m => m.OtpPageModule)
   }
 
 ];

@@ -1,0 +1,35 @@
+.otp-header {
+  background: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
+  &-title {
+    font-size: 20px;
+  }
+  &-icon {
+    padding: 3rem 0px;
+    img {
+      width: 64px;
+    }
+  }
+}
+
+.otp {
+  &-title {
+    margin: 1.5rem auto;
+  }
+  p {
+    text-align: center;
+  }
+  .otp-input-container {
+    ion-input.otp-input {
+      border: 1px solid var(--gray) !important;
+    }
+  }
+  .submit-btn-box {
+    width: 8rem;
+    button.primary-button {
+      width: 100%;
+      color: #fff;
+      border-radius: 10px;
+    }
+  }
+}

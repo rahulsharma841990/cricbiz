@@ -28,7 +28,7 @@ jobs:
       - name: setup java sdk
         uses: actions/setup-java@v1
         with:
-          java-version: '9.0.4'
+          java-version: '8'
 
       - name: setup Node.js
         uses: actions/setup-node@v1

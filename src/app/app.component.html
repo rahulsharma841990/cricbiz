@@ -1,6 +1,6 @@
 <ion-app>
-	<ion-split-pane contentId="main-content">
-		<ion-menu contentId="main-content" type="overlay">
+	<ion-split-pane contentId="main-content" autoHide="true">
+		<ion-menu contentId="main-content" type="overlay" autoHide="true">
 			<ion-header>
 				<ion-toolbar class="menu-toolbar">
 					<ion-row class="user-details">
@@ -38,7 +38,7 @@
 								<img src="../assets/images/sidemenus/gift-pro.png" slot="start" />
 								<ion-label>Gift a PRO Membership</ion-label>
 							</ion-item>
-							<ion-item button lines="none">
+							<ion-item button lines="none" (click)="goTo('tournament-create')">
 								<img src="../assets/images/sidemenus/add-tournament.png" slot="start" />
 								<ion-label>Add a Tournament</ion-label>
 							</ion-item>

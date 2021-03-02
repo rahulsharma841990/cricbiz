@@ -7,41 +7,26 @@
         <ion-card-content class="ion-padding">
           <ion-row class="highlight-calander ion-justify-content-center">
             <ion-col size="4" align="center" class="">
-              <div
-                class="team-photo-upload gray-bg ion-justify-content-center ion-align-items-center d-flex"
-              >
+              <div class="team-photo-upload gray-bg ion-justify-content-center ion-align-items-center d-flex">
                 <ion-icon name="camera-outline"></ion-icon>
               </div>
             </ion-col>
           </ion-row>
           <ion-row class="highlight-title my-3 custom-forms">
             <ion-item lines="none">
-              <img
-                src="assets/images/trophy.png"
-                slot="start"
-                class="input-icon"
-              />
+              <img src="assets/images/trophy.png" slot="start" class="input-icon" />
               <ion-input placeholder="Team Name *"></ion-input>
             </ion-item>
 
             <ion-item lines="none">
-              <img
-                src="assets/images/company.png"
-                slot="start"
-                class="input-icon"
-              />
+              <img src="assets/images/company.png" slot="start" class="input-icon" />
               <ion-input placeholder="City Town *"></ion-input>
             </ion-item>
           </ion-row>
 
           <ion-row>
             <ion-col>
-              <ion-button
-                class="primary-button next-button"
-                [routerLink]="['/type-of-team']"
-                expand="block"
-                >ADD TEAMS</ion-button
-              >
+              <ion-button class="primary-button next-button" (click)="addTeam()" expand="block">ADD TEAMS</ion-button>
             </ion-col>
           </ion-row>
         </ion-card-content>

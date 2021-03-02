@@ -1,3 +1,13 @@
+.highlights-card {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  .card-content {
+    padding: 0px;
+    ion-button {
+      margin: 0px;
+    }
+  }
+}
 .players {
   width: 90%;
   border-radius: 6px;
@@ -5,6 +15,7 @@
   margin: 0rem auto;
 
   .player {
+    padding: 0.75rem 1rem;
     &-photo {
       width: 60px;
       height: 60px;

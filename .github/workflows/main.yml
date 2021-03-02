@@ -22,19 +22,33 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: checkout source
+        uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Use coturiv/setup-ionic
-        uses: coturiv/setup-ionic@v1.0.3
+      - name: setup java sdk
+        uses: actions/setup-java@v1
         with:
-          cordova-version: 9
+          java-version: '9.0.4'
 
-      - name: Build
-        run: |
-          ionic cordova build android --prod
+      - name: setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13.x
+
+      - name: Install Cordova
+        run: npm install -g cordova
+
+      - name: Install Ionic cli
+        run: npm install -g @ionic/cli
+
+      - name: Install app dependencies
+        run: npm install
+
+      - name: build the app
+        run: ionic cordova build android --prod
+
+      - name: Upload dev APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-dev
+          path: platforms/android/app/build/outputs/apk/debug/app-debug.apk

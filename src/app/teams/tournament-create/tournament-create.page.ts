@@ -39,6 +39,6 @@ export class TournamentCreatePage implements OnInit {
 	}
 
 	next() {
-		this.navCtrl.navigateRoot('tournament-created', { animationDirection: 'forward' });
+		this.navCtrl.navigateForward('team-create', { animationDirection: 'forward' });
 	}
 }

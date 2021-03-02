@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
 	}
 
 	gotoDashboard() {
-		this.navCtrl.navigateRoot('dashboard', { animationDirection: 'forward' })
+		this.navCtrl.navigateRoot('otp', { animationDirection: 'forward' })
 	}
 
 }

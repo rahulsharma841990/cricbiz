@@ -10,6 +10,7 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
+// @import "theme/overwright";
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -119,6 +120,9 @@ p {
 .mt-1 {
   margin-top: 1rem;
 }
+.mt-2 {
+  margin-top: 2rem;
+}
 .mt-3 {
   margin-top: 3rem;
 }
@@ -209,4 +213,10 @@ p {
 
 .vs {
   font-size: 30px;
+}
+
+.border-round {
+  :host(.button-full:not(.button-round)) .button-native {
+    border-radius: 30px;
+  }
 }

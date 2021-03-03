@@ -69,6 +69,14 @@ const routes: Routes = [
   {
     path: 'otp',
     loadChildren: () => import('./authenticate/otp/otp.module').then( m => m.OtpPageModule)
+  },
+  {
+    path: 'bowling-maching',
+    loadChildren: () => import('./teams/bowling-maching/bowling-maching.module').then( m => m.BowlingMachingPageModule)
+  },
+  {
+    path: 'commentators',
+    loadChildren: () => import('./teams/commentators/commentators.module').then( m => m.CommentatorsPageModule)
   }
 
 ];

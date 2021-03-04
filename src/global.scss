@@ -222,3 +222,14 @@ p {
     border-radius: 30px;
   }
 }
+.m-auto {
+  margin: auto;
+}
+.bg-white {
+  background: var(--ion-color-primary-contrast);
+}
+
+.px-1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

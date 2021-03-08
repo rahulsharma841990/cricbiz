@@ -89,6 +89,18 @@ const routes: Routes = [
   {
     path: 'cricket-clubs',
     loadChildren: () => import('./news/cricket-clubs/cricket-clubs.module').then( m => m.CricketClubsPageModule)
+  },
+  {
+    path: 'commentators-details',
+    loadChildren: () => import('./teams/commentators-details/commentators-details.module').then( m => m.CommentatorsDetailsPageModule)
+  },
+  {
+    path: 'emerging-news',
+    loadChildren: () => import('./news/emergingCricket/emerging-news/emerging-news.module').then( m => m.EmergingNewsPageModule)
+  },
+  {
+    path: 'unattempted',
+    loadChildren: () => import('./quiz/unattempted/unattempted.module').then( m => m.UnattemptedPageModule)
   }
 
 ];

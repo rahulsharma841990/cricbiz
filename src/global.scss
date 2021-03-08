@@ -79,7 +79,7 @@
   color: #fff;
   text-transform: none;
   font-weight: normal;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 20px;
 }
 
@@ -161,6 +161,9 @@ p {
 .gap-1 {
   gap: 1rem;
 }
+.p-h {
+  padding: 0.75rem;
+}
 .direction-column {
   flex-direction: column;
 }
@@ -204,6 +207,13 @@ p {
 .btn-primary-rounded {
   background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
   color: #fff;
+}
+.btn-dark-rounded {
+  --background: #2a2a2a;
+  --background: linear-gradient(180deg, #2a2a2a, #4d4d4d 75%);
+  background: var(--background);
+  color: #fff;
+  border-radius: 10px;
 }
 .btn-light-rounded {
   background: #fff;

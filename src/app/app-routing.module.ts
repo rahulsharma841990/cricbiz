@@ -101,6 +101,10 @@ const routes: Routes = [
   {
     path: 'unattempted',
     loadChildren: () => import('./quiz/unattempted/unattempted.module').then( m => m.UnattemptedPageModule)
+  },
+  {
+    path: 'add-team',
+    loadChildren: () => import('./teams/add-team/add-team.module').then( m => m.AddTeamPageModule)
   }
 
 ];

@@ -243,3 +243,12 @@ p {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.bg-blue {
+  background: var(--bluebg);
+}
+.bg-green {
+  background: var(--greenbg);
+}
+.outerbox {
+  border-radius: 10px;
+}

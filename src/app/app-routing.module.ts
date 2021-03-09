@@ -105,6 +105,14 @@ const routes: Routes = [
   {
     path: 'add-team',
     loadChildren: () => import('./teams/add-team/add-team.module').then( m => m.AddTeamPageModule)
+  },
+  {
+    path: 'awards',
+    loadChildren: () => import('./teams/awards/awards.module').then( m => m.AwardsPageModule)
+  },
+  {
+    path: 'badges',
+    loadChildren: () => import('./teams/badges/badges.module').then( m => m.BadgesPageModule)
   }
 
 ];

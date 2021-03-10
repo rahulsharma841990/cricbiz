@@ -113,6 +113,18 @@ const routes: Routes = [
   {
     path: 'badges',
     loadChildren: () => import('./teams/badges/badges.module').then( m => m.BadgesPageModule)
+  },
+  {
+    path: 'connections',
+    loadChildren: () => import('./teams/connections/connections.module').then( m => m.ConnectionsPageModule)
+  },
+  {
+    path: 'photos',
+    loadChildren: () => import('./teams/photos/photos.module').then( m => m.PhotosPageModule)
+  },
+  {
+    path: 'outhow',
+    loadChildren: () => import('./teams/outhow/outhow.module').then( m => m.OuthowPageModule)
   }
 
 ];

@@ -10,6 +10,7 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
+// @import "theme/overwright";
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -78,7 +79,7 @@
   color: #fff;
   text-transform: none;
   font-weight: normal;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 20px;
 }
 
@@ -119,6 +120,9 @@ p {
 .mt-1 {
   margin-top: 1rem;
 }
+.mt-2 {
+  margin-top: 2rem;
+}
 .mt-3 {
   margin-top: 3rem;
 }
@@ -157,7 +161,12 @@ p {
 .gap-1 {
   gap: 1rem;
 }
-
+.p-h {
+  padding: 0.75rem;
+}
+.direction-column {
+  flex-direction: column;
+}
 .shadow-1 {
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px,
     rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px;
@@ -199,6 +208,13 @@ p {
   background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
   color: #fff;
 }
+.btn-dark-rounded {
+  --background: #2a2a2a;
+  --background: linear-gradient(180deg, #2a2a2a, #4d4d4d 75%);
+  background: var(--background);
+  color: #fff;
+  border-radius: 10px;
+}
 .btn-light-rounded {
   background: #fff;
 }
@@ -209,4 +225,30 @@ p {
 
 .vs {
   font-size: 30px;
+}
+
+.border-round {
+  :host(.button-full:not(.button-round)) .button-native {
+    border-radius: 30px;
+  }
+}
+.m-auto {
+  margin: auto;
+}
+.bg-white {
+  background: var(--ion-color-primary-contrast);
+}
+
+.px-1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.bg-blue {
+  background: var(--bluebg);
+}
+.bg-green {
+  background: var(--greenbg);
+}
+.outerbox {
+  border-radius: 10px;
 }

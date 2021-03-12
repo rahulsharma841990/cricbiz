@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-player-bbl.page.scss'],
 })
 export class AddPlayerBblPage implements OnInit {
+  bblplayers: string = 'network';
+  isAndroid: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -4,6 +4,10 @@
   justify-content: space-between;
   min-height: calc(100vh - 100px);
   .round-img {
+    .round-img-center {
+      margin: auto;
+      margin-bottom: 0.5rem;
+    }
     div {
       width: 90px;
       height: 90px;

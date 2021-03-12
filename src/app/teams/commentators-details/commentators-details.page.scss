@@ -1,0 +1,14 @@
+@import "../commentators/commentators.page.scss";
+
+.ratingbox {
+  h2 {
+    color: var(--ion-color-primary);
+  }
+}
+.checkbox-area {
+  width: 2rem;
+}
+.text-bold {
+  font-weight: bold;
+  color: #000;
+}

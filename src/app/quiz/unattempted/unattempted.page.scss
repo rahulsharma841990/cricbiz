@@ -1,0 +1,17 @@
+@import "../../news/cricket-news/cricket-news.page.scss";
+.img-section {
+  img {
+    border-radius: 10px;
+  }
+}
+.card-content {
+  padding: 0;
+}
+h2 {
+  span {
+    color: var(--ion-color-medium);
+  }
+}
+.dateandtime {
+  font-size: 12px;
+}

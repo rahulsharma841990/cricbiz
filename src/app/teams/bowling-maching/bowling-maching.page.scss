@@ -1,0 +1,40 @@
+.highlights-card {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  .card-content {
+    padding: 0px;
+    ion-button {
+      margin: 0px;
+    }
+  }
+}
+.players {
+  width: 90%;
+  border-radius: 6px;
+  padding: 1rem 0;
+  margin: 0rem auto;
+
+  .player {
+    padding: 0.75rem 1rem;
+    &-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    &-details {
+      h2 {
+        font-weight: 500;
+      }
+    }
+
+    .teamde {
+      width: 12px;
+      fill: var(--ion-color-primary);
+    }
+  }
+
+  .green {
+    color: green;
+    font-style: italic;
+  }
+}

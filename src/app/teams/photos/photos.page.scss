@@ -1,0 +1,14 @@
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
+  .photos {
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100px;
+    img {
+      width: 100%;
+    }
+  }
+}

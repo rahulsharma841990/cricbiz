@@ -69,7 +69,63 @@ const routes: Routes = [
   },
   {
     path: 'otp',
-    loadChildren: () => import('./authenticate/otp/otp.module').then(m => m.OtpPageModule)
+    loadChildren: () => import('./authenticate/otp/otp.module').then( m => m.OtpPageModule)
+  },
+  {
+    path: 'bowling-maching',
+    loadChildren: () => import('./teams/bowling-maching/bowling-maching.module').then( m => m.BowlingMachingPageModule)
+  },
+  {
+    path: 'commentators',
+    loadChildren: () => import('./teams/commentators/commentators.module').then( m => m.CommentatorsPageModule)
+  },
+  {
+    path: 'cricket-news',
+    loadChildren: () => import('./news/cricket-news/cricket-news.module').then( m => m.CricketNewsPageModule)
+  },
+  {
+    path: 'cricket-news-internation',
+    loadChildren: () => import('./news/cricket-news-internation/cricket-news-internation.module').then( m => m.CricketNewsInternationPageModule)
+  },
+  {
+    path: 'cricket-clubs',
+    loadChildren: () => import('./news/cricket-clubs/cricket-clubs.module').then( m => m.CricketClubsPageModule)
+  },
+  {
+    path: 'commentators-details',
+    loadChildren: () => import('./teams/commentators-details/commentators-details.module').then( m => m.CommentatorsDetailsPageModule)
+  },
+  {
+    path: 'emerging-news',
+    loadChildren: () => import('./news/emergingCricket/emerging-news/emerging-news.module').then( m => m.EmergingNewsPageModule)
+  },
+  {
+    path: 'unattempted',
+    loadChildren: () => import('./quiz/unattempted/unattempted.module').then( m => m.UnattemptedPageModule)
+  },
+  {
+    path: 'add-team',
+    loadChildren: () => import('./teams/add-team/add-team.module').then( m => m.AddTeamPageModule)
+  },
+  {
+    path: 'awards',
+    loadChildren: () => import('./teams/awards/awards.module').then( m => m.AwardsPageModule)
+  },
+  {
+    path: 'badges',
+    loadChildren: () => import('./teams/badges/badges.module').then( m => m.BadgesPageModule)
+  },
+  {
+    path: 'connections',
+    loadChildren: () => import('./teams/connections/connections.module').then( m => m.ConnectionsPageModule)
+  },
+  {
+    path: 'photos',
+    loadChildren: () => import('./teams/photos/photos.module').then( m => m.PhotosPageModule)
+  },
+  {
+    path: 'outhow',
+    loadChildren: () => import('./teams/outhow/outhow.module').then( m => m.OuthowPageModule)
   }
 
 ];

@@ -1,3 +1,4 @@
+import { UtilsService } from './../../utils.service';
 import { SelectGroundComponent } from './../../shared/select-ground/select-ground.component';
 import { CityComponent } from './../../shared/city/city.component';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ import * as $ from 'jquery'
 })
 export class TournamentCreatePage implements OnInit {
 
-	constructor(public modalCtrl: ModalController, public navCtrl: NavController) {
+	constructor(public modalCtrl: ModalController, public navCtrl: NavController, public utilService: UtilsService) {
 	}
 
 	ngOnInit() {
@@ -39,6 +40,10 @@ export class TournamentCreatePage implements OnInit {
 	}
 
 	next() {
-		this.navCtrl.navigateRoot('tournament-created', { animationDirection: 'forward' });
+		this.utilService.presentLoadingWithOptions().then((a: any) => {
+			this.utilService.loading.onDidDismiss().then(() => {
+				this.navCtrl.navigateForward('team-create', { animationDirection: 'forward' });
+			});
+		});
 	}
 }

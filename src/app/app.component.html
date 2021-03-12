@@ -1,6 +1,6 @@
 <ion-app>
-	<ion-split-pane contentId="main-content">
-		<ion-menu contentId="main-content" type="overlay">
+	<ion-split-pane contentId="main-content" autoHide="true">
+		<ion-menu contentId="main-content" type="overlay" autoHide="true">
 			<ion-header>
 				<ion-toolbar class="menu-toolbar">
 					<ion-row class="user-details">
@@ -12,6 +12,7 @@
 							<small>
 								<ion-icon name="call-outline" color="danger"></ion-icon>
 								+91-9888098880
+
 							</small>
 						</ion-col>
 					</ion-row>
@@ -37,7 +38,7 @@
 								<img src="../assets/images/sidemenus/gift-pro.png" slot="start" />
 								<ion-label>Gift a PRO Membership</ion-label>
 							</ion-item>
-							<ion-item button lines="none">
+							<ion-item button lines="none" (click)="goTo('tournament-create')">
 								<img src="../assets/images/sidemenus/add-tournament.png" slot="start" />
 								<ion-label>Add a Tournament</ion-label>
 							</ion-item>
@@ -117,7 +118,7 @@
 								<img src="../assets/images/sidemenus/contact-us.png" slot="start" />
 								<ion-label>Contact Us</ion-label>
 							</ion-item>
-							<ion-item button lines="none">
+							<ion-item button lines="none" [routerLink]="['/login']">
 								<img src="../assets/images/sidemenus/logout.png" slot="start" />
 								<ion-label>Logout</ion-label>
 							</ion-item>

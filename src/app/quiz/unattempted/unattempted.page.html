@@ -1,0 +1,37 @@
+<app-form-headers [title]="'Cricket Quizzes'"></app-form-headers>
+
+<ion-content class="gray-bg">
+  <ion-row class="px-1 my-1">
+    <ion-col size="6">
+      <button class="btn-primary-rounded btn" [routerLink]="['/unattempted']">
+        Unattempted
+      </button>
+    </ion-col>
+
+    <ion-col size="6">
+      <button class="btn-light-rounded btn" [routerLink]="['']">
+        Attempted
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="11" class="m-auto bg-white outerbox">
+      <ion-card class="card card-md border-rounded p-h">
+        <ion-card-content class="card-content card-content-md mb-1">
+          <h2>
+            <span>Quize:</span> List of fastest Centuries in T20 Internation
+            Cricket
+          </h2>
+          Björk first came to prominence as one of the lead vocalists of the
+          avant pop
+          <span class="dateandtime">Date:13/01/2021 | Time 11:39AM</span>
+        </ion-card-content>
+        <div class="img-section">
+          <img src="assets/images/bjork-live.jpg" />
+        </div>
+        <button class="btn btn-dark-rounded my-1">START QUIZ</button>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

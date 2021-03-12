@@ -10,6 +10,7 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
+// @import "theme/overwright";
 @import "~@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -26,64 +27,64 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 .gray-bg {
-  --background: #f1f0f1;
-  background: #f1f0f1;
+	--background: #f1f0f1;
+	background: #f1f0f1;
 }
 .d-flex {
-  display: flex;
+	display: flex;
 }
 .primary-input {
-  ion-input {
-    background-color: #fff;
-    border-radius: 12px;
-    height: 45px;
-    box-shadow: 0px 2px 5px 0px #ccc;
-  }
-  ion-label {
-    margin-bottom: 10px;
-    font-weight: 600;
-    display: inline-block;
-  }
-  ion-select {
-    width: 100%;
-  }
-  ion-item {
-    border-radius: 12px;
-    box-shadow: 0px 2px 5px 0px #ccc;
-  }
-  margin-bottom: 10px;
+	ion-input {
+		background-color: #fff;
+		border-radius: 12px;
+		height: 45px;
+		box-shadow: 0px 2px 5px 0px #ccc;
+	}
+	ion-label {
+		margin-bottom: 10px;
+		font-weight: 600;
+		display: inline-block;
+	}
+	ion-select {
+		width: 100%;
+	}
+	ion-item {
+		border-radius: 12px;
+		box-shadow: 0px 2px 5px 0px #ccc;
+	}
+	margin-bottom: 10px;
 }
 
 .primary-button {
-  --background: rgb(213, 31, 1);
-  --background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
-  background: var(--background);
-  text-transform: none;
-  // font-weight: 500;
-  font-weight: normal;
-  height: 45px;
-  color: #fff;
+	--background: rgb(213, 31, 1);
+	--background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
+	background: var(--background);
+	text-transform: none;
+	// font-weight: 500;
+	font-weight: normal;
+	height: 45px;
+	color: #fff;
 }
 
 .primary-button-round {
-  background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
-  color: #fff;
-  text-transform: none;
-  font-weight: normal;
-  padding: 0.5rem 0.75rem;
-  border-radius: 20px;
+	background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
+	color: #fff;
+	text-transform: none;
+	font-weight: normal;
+	padding: 0.5rem 1.2rem;
+	border-radius: 20px;
 }
 
 .dark-button {
-  --background: #2a2a2a;
-  --background: linear-gradient(180deg, #2a2a2a, #4d4d4d 75%);
-  text-transform: none;
-  font-weight: 500;
-  height: 45px;
+	--background: #2a2a2a;
+	--background: linear-gradient(180deg, #2a2a2a, #4d4d4d 75%);
+	text-transform: none;
+	font-weight: 500;
+	height: 45px;
 }
 
 .content-pdding {
-  padding-left: 15px;
+	padding-left: 15px;
 }
 
 h1,
@@ -93,138 +94,178 @@ h4,
 h5,
 h6,
 p {
-  margin: 0px;
+	margin: 0px;
 }
 
 .text-gradiant {
-  background: #d61e00;
-  background: -webkit-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
-  background: -moz-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
-  background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	background: #d61e00;
+	background: -webkit-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+	background: -moz-linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+	background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .italic {
-  font-style: italic;
+	font-style: italic;
 }
 .mt-1 {
-  margin-top: 1rem;
+	margin-top: 1rem;
+}
+.mt-2 {
+	margin-top: 2rem;
 }
 .mt-3 {
-  margin-top: 3rem;
+	margin-top: 3rem;
 }
 .my-3 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 }
 
 .my-1 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 .mb-1 {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 .custom-forms {
-  ion-item {
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    margin-bottom: 10px;
-    flex: 1 1 100%;
-    .input-icon {
-      width: 30px;
-      height: 30px;
-    }
-  }
+	ion-item {
+		border: 1px solid var(--gray);
+		border-radius: 8px;
+		margin-bottom: 10px;
+		flex: 1 1 100%;
+		.input-icon {
+			width: 30px;
+			height: 30px;
+		}
+	}
 }
 
 .dark-text {
-  color: var(--dark-text);
+	color: var(--dark-text);
 }
 
 .gap-h {
-  gap: 0.5rem;
+	gap: 0.5rem;
 }
 .gap-1 {
-  gap: 1rem;
+	gap: 1rem;
 }
-
+.p-h {
+	padding: 0.75rem;
+}
+.direction-column {
+	flex-direction: column;
+}
 .shadow-1 {
-  box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px;
+	box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px;
 }
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 .searchbox {
-  .searchbar-input-container {
-    .searchbar-input {
-      border-radius: 10px;
-      box-shadow: none;
-      border: 1px solid var(--gray);
-    }
-  }
+	.searchbar-input-container {
+		.searchbar-input {
+			border-radius: 10px;
+			box-shadow: none;
+			border: 1px solid var(--gray);
+		}
+	}
 }
 
 .searchbox-bordered {
-  .searchbar-input-container {
-    .searchbar-input {
-      border-radius: 10px;
-    }
-  }
+	.searchbar-input-container {
+		.searchbar-input {
+			border-radius: 10px;
+		}
+	}
 }
 .btn-rounded {
-  .button-native {
-    --border-radius: 20px;
-  }
+	.button-native {
+		--border-radius: 20px;
+	}
 }
 .btn {
-  border-radius: 20px;
-  text-align: center;
-  display: block;
-  padding: 0.75rem 1rem;
-  width: 100%;
-  font-size: 16px;
+	border-radius: 20px;
+	text-align: center;
+	display: block;
+	padding: 0.75rem 1rem;
+	width: 100%;
+	font-size: 16px;
 }
 .btn-primary-rounded {
-  background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
-  color: #fff;
+	background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+	color: #fff;
+}
+.btn-dark-rounded {
+	--background: #2a2a2a;
+	--background: linear-gradient(180deg, #2a2a2a, #4d4d4d 75%);
+	background: var(--background);
+	color: #fff;
+	border-radius: 10px;
 }
 .btn-light-rounded {
-  background: #fff;
+	background: #fff;
 }
 
 .border-radius {
-  border-radius: 50%;
+	border-radius: 50%;
 }
 
 .vs {
-  font-size: 30px;
+	font-size: 30px;
 }
 
 :root tag {
-  color: #fff !important;
-  background: #b70b0b !important;
-  padding: 0px 8px 3px 14px !important;
-  delete-icon {
-    path {
-      fill: #fff !important;
-    }
-  }
+	color: #fff !important;
+	background: #b70b0b !important;
+	padding: 0px 8px 3px 14px !important;
+	delete-icon {
+		path {
+			fill: #fff !important;
+		}
+	}
 }
 
 :root tag-input {
-  .ng2-tag-input.ng2-tag-input--focused {
-    --highlight-color-focused: none;
-    box-shadow: none;
-    --box-shadow: none;
-    border-bottom: 0px !important;
-  }
+	.ng2-tag-input.ng2-tag-input--focused {
+		--highlight-color-focused: none;
+		box-shadow: none;
+		--box-shadow: none;
+		border-bottom: 0px !important;
+	}
 }
 
 :root tag-input-form {
-  input {
-    background: transparent;
-    width: 100px;
-  }
+	input {
+		background: transparent;
+		width: 100px;
+	}
+	.border-round {
+		:host(.button-full:not(.button-round)) .button-native {
+			border-radius: 30px;
+		}
+	}
+}
+.m-auto {
+	margin: auto;
+}
+.bg-white {
+	background: var(--ion-color-primary-contrast);
+}
+
+.px-1 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.bg-blue {
+	background: var(--bluebg);
+}
+.bg-green {
+	background: var(--greenbg);
+}
+.outerbox {
+	border-radius: 10px;
 }

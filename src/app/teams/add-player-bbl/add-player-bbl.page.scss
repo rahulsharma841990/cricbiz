@@ -1,3 +1,17 @@
+// @mixin addBblPlayers {
+//   .segment-button-checked {
+//     border-radius: 30px;
+//     background: var(--ion-color-primary);
+
+//     :host(.in-segment-color.segment-button-checked) .button-native {
+//       color: var(--ion-color-primary-contrast);
+//     }
+//     .segment-button-indicator {
+//       opacity: 0;
+//     }
+//   }
+// }
+
 .players {
   width: 90%;
   border-radius: 6px;
@@ -16,4 +30,22 @@
       }
     }
   }
+}
+
+.btn-icon {
+  margin-right: 10px;
+}
+.phonember {
+  border-radius: 30px;
+  background-color: var(--ion-color-primary-contrast);
+
+  .phonenmb {
+    border: none;
+    outline: 0;
+    flex: 1 1 65%;
+    height: 30px;
+  }
+}
+.btnnew {
+  font-size: 80%;
 }

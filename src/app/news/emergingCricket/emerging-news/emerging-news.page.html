@@ -1,0 +1,36 @@
+<app-form-headers [title]="'Emerging Cricket'"></app-form-headers>
+
+<ion-content class="gray-bg">
+  <ion-row class="px-1 my-1">
+    <ion-col size="6">
+      <button class="btn-primary-rounded btn" [routerLink]="['/emerging-news']">
+        News
+      </button>
+    </ion-col>
+
+    <ion-col size="6">
+      <button class="btn-light-rounded btn" [routerLink]="['']">
+        Products
+      </button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="11" class="m-auto bg-white outerbox">
+      <ion-card
+        class="card card-md border-rounded d-flex ion-align-items-start p-h gap-h"
+      >
+        <div class="img-section">
+          <img src="assets/icon/helmet.svg" />
+        </div>
+
+        <ion-card-content class="card-content card-content-md">
+          <h2>Captain Manthan Pulate's three wickets help S4 11 win</h2>
+          <h5>(by Ben Stinga | 2day ago)</h5>
+          Björk first came to prominence as one of the lead vocalists of the
+          avant pop
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

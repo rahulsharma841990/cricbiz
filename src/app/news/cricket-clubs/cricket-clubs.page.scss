@@ -1,0 +1,45 @@
+.outerbox {
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.border-rounded {
+  border-radius: 10px;
+}
+ion-card {
+  margin-bottom: 1.5rem;
+}
+.img-section {
+  position: relative;
+
+  &-content {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    background: rgba(15, 15, 15, 0.671);
+    color: var(--ion-color-primary-contrast);
+    box-sizing: border-box;
+    height: 67px;
+    padding: 0.5rem 1.25rem;
+    flex-flow: column;
+    text-align: center;
+    p {
+      line-height: 20px;
+    }
+    span {
+      color: red;
+    }
+    ion-card-title {
+      font-size: 14px;
+    }
+    .customicon {
+      width: 30px;
+    }
+  }
+}
+.card-content {
+  color: var(--ion-color-dark);
+  h5 {
+    color: var(--ion-color-medium);
+  }
+}

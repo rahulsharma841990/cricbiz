@@ -1,52 +1,48 @@
 <ion-header>
-  <ion-toolbar>
-    <img src="assets/images/logo.png" class="logo-image" />
-  </ion-toolbar>
+	<ion-toolbar>
+		<img src="assets/images/logo.png" class="logo-image" />
+	</ion-toolbar>
 </ion-header>
 
 <ion-content class="gray-bg ion-padding">
-  <ion-row class="batsman-image">
-    <ion-col align="center">
-      <img src="assets/images/batsman.png" class="logo" />
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col class="primary-input" size="12">
-      <ion-label>Select Country</ion-label>
-      <ion-item>
-        <ion-select>
-          <ion-select-option value="india">India</ion-select-option>
-          <ion-select-option value="nepal">Nepal</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-col>
-    <ion-col class="primary-input" size="12">
-      <ion-label>Phone No:</ion-label>
-      <ion-input value="" type="number"></ion-input>
-    </ion-col>
-    <ion-col size="12" class="login-with-passcode">
-      <p>Login with Passcode?</p>
-    </ion-col>
-  </ion-row>
-  <ion-row class="login-button">
-    <ion-col align="center">
-      <ion-button class="primary-button" (click)="gotoDashboard()"
-        >Let's Play</ion-button
-      >
-    </ion-col>
-  </ion-row>
-  <ion-row class="terms-condition">
-    <ion-col>
-      <ion-checkbox></ion-checkbox>
-      <p>
-        By Continusing , You agree Cric.Biz's <span>Condition of Use</span> and
-        <span>Privacy policynotice</span>
-      </p>
-    </ion-col>
-  </ion-row>
+	<ion-row class="batsman-image">
+		<ion-col align="center">
+			<img src="assets/images/batsman.png" class="logo" />
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col class="primary-input" size="12">
+			<ion-label>Select Country</ion-label>
+			<ion-item>
+				<ion-select [(ngModel)]="country">
+					<ion-select-option value="+91">India</ion-select-option>
+					<ion-select-option value="+93">Nepal</ion-select-option>
+				</ion-select>
+			</ion-item>
+		</ion-col>
+		<ion-col class="primary-input" size="12">
+			<ion-label>Phone No:</ion-label>
+			<ion-input value="" type="number" [(ngModel)]="phone"></ion-input>
+		</ion-col>
+		<ion-col size="12" class="login-with-passcode">
+			<p>Login with Passcode?</p>
+		</ion-col>
+	</ion-row>
+	<ion-row class="login-button">
+		<ion-col align="center">
+			<ion-button class="primary-button" (click)="sendOtp()">Let's Play</ion-button>
+		</ion-col>
+	</ion-row>
+	<ion-row class="terms-condition">
+		<ion-col>
+			<ion-checkbox></ion-checkbox>
+			<p>
+				By Continusing , You agree Cric.Biz's <span>Condition of Use</span> and
+				<span>Privacy policynotice</span>
+			</p>
+		</ion-col>
+	</ion-row>
 </ion-content>
 <ion-footer class="login-footer">
-  <ion-button expand="full" [routerLink]="['/otp']"
-    >Continue As Guest User</ion-button
-  >
+	<ion-button expand="full" [routerLink]="['/otp']">Continue As Guest User</ion-button>
 </ion-footer>

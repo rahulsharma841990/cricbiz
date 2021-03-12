@@ -1,27 +1,15 @@
-<app-form-headers modal="true" title="Search City/Town" customclass="redBg"></app-form-headers>
+<app-form-headers modal="true" title="{{ titleText }}" customclass="redBg"></app-form-headers>
 <ion-content class="gray-bg ion-no-padding">
 	<ion-row>
 		<ion-col>
-			<ion-searchbar showCancelButton="focus"></ion-searchbar>
+			<ion-searchbar showCancelButton="focus" (ionInput)="filterList($event)"></ion-searchbar>
 		</ion-col>
 	</ion-row>
 	<ion-row>
 		<ion-col>
 			<ion-list>
-				<ion-item>
-					<ion-label>Pokémon Yellow</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-label>Mega Man X</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-label>The Legend of Zelda</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-label>Pac-Man</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-label>Super Mario World</ion-label>
+				<ion-item *ngFor="let record of records" (click)="getCities(record)">
+					<ion-label>{{ record.name }}</ion-label>
 				</ion-item>
 			</ion-list>
 		</ion-col>

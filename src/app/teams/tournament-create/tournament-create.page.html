@@ -2,7 +2,8 @@
 <ion-content class="gray-bg ion-padding">
 	<ion-card class="image-uploader">
 		<ion-card-content>
-			<div class="upload-image">
+			<img [src]="bannerImage" class="banner-image" *ngIf="isBannerInserted == true" (click)="removeBanner()" />
+			<div class="upload-image" (click)="insertLogo('banner')" *ngIf="isBannerInserted == false">
 				<img src="../../../assets/images/image-placeholder.png" class="placeholder-image" />
 				<img src="../../../assets/images/camera.png" class="camera-image" />
 				<p>Add Tournament Banner</p>
@@ -12,11 +13,11 @@
 	<ion-row>
 		<ion-col size="12">
 			<div class="tournament-logos">
-				<div class="banner-logos">
-					<img src="../../../assets/images/ipl.png" class="logo-image" />
-					<span>IPL</span>
+				<div class="banner-logos" *ngFor="let logo of logoImages; let i = index" (click)="deleteLogo(i)">
+					<img [src]="logo['image']" class="logo-image" />
+					<span>{{ logo['caption'] }}</span>
 				</div>
-				<div class="banner-logos">
+				<div class="banner-logos" (click)="insertLogo('logo')" *ngIf="logoImages.length < 5">
 					<img src="../../../assets/images/100.png" class="logo-image" />
 					<img src="../../../assets/images/camera.png" class="camera-image" />
 					<span>Add Logo</span>
@@ -24,43 +25,49 @@
 			</div>
 		</ion-col>
 	</ion-row>
+
 	<ion-card class="inputs-card">
 		<ion-card-content>
 			<ion-item lines="none">
-				<ion-input placeholder="Tournament Name *"></ion-input>
+				<ion-input placeholder="Tournament Name *" [(ngModel)]="formData['tournamentName']"></ion-input>
 				<img src="../../../assets/images/trophy.png" slot="start" class="input-icon" />
 			</ion-item>
 			<ion-item lines="none" (click)="selectCity()">
-				<ion-input placeholder="City Name *"></ion-input>
+				<ion-input placeholder="City Name *" [(ngModel)]="formData['cityName']" readonly></ion-input>
 				<img src="../../../assets/images/company.png" slot="start" class="input-icon" />
 			</ion-item>
-			<ion-item lines="none" (click)="selectGround()">
-				<ion-input placeholder="Ground *"></ion-input>
+			<ion-item lines="none">
+				<!-- <ion-input placeholder="Ground *" [(ngModel)]="formData['ground']"></ion-input> -->
+				<tag-input [(ngModel)]="formData['ground']" ngDefaultControl placeholder="Ground *"
+					[inputClass]="tagInput" secondaryPlaceholder="Ground *">
+				</tag-input>
 				<img src="../../../assets/images/ground.png" slot="start" class="input-icon" />
 			</ion-item>
 			<ion-item lines="none">
-				<ion-input placeholder="Orgnizer Name *"></ion-input>
+				<ion-input placeholder="Orgnizer Name *" [(ngModel)]="formData['organizerName']"></ion-input>
 				<img src="../../../assets/images/organization.png" slot="start" class="input-icon" />
 			</ion-item>
 			<ion-item lines="none">
-				<ion-input placeholder="Orgnizer Number *"></ion-input>
+				<ion-input placeholder="Orgnizer Number *" [(ngModel)]="formData['organizerNumber']"></ion-input>
 				<img src="../../../assets/images/org_number.png" slot="start" class="input-icon" />
 			</ion-item>
 			<ion-item class="no-border" lines="none">
 				<ion-label text-wrap class="allow-whatsapp">Allow player to contact me on WhatsAPP for Team
 					Registeration</ion-label>
-				<ion-checkbox slot="start"></ion-checkbox>
+				<ion-checkbox slot="start" [(ngModel)]="formData['allowPlayContact']"></ion-checkbox>
 			</ion-item>
 			<ion-row>
 				<ion-col size="6">
 					<ion-item lines="none">
-						<ion-datetime displayFormat="DD MMMM YYYY" value="" placeholder="Start Date *"></ion-datetime>
+						<ion-datetime displayFormat="DD MMMM YYYY" value="" placeholder="Start Date *"
+							[(ngModel)]="formData['startDate']"></ion-datetime>
 						<img src="../../../assets/images/calendar.png" slot="start" class="input-icon" />
 					</ion-item>
 				</ion-col>
 				<ion-col size="6">
 					<ion-item lines="none">
-						<ion-datetime displayFormat="DD MMMM YYYY" value="" placeholder="End Date *"></ion-datetime>
+						<ion-datetime displayFormat="DD MMMM YYYY" value="" placeholder="End Date *"
+							[(ngModel)]="formData['endDate']"></ion-datetime>
 						<img src="../../../assets/images/calendar.png" slot="start" class="input-icon" />
 					</ion-item>
 				</ion-col>
@@ -68,22 +75,25 @@
 			<ion-row class="category">
 				<ion-col size="12">
 					<h2>Tournament Category</h2>
-					<ion-chip>
+					<ion-chip [ngClass]="{active: formData['categories'] == 'open'}" (click)="setCategory('open')">
 						<ion-label>Open</ion-label>
 					</ion-chip>
-					<ion-chip>
+					<ion-chip [ngClass]="{active: formData['categories'] == 'corporate'}"
+						(click)="setCategory('corporate')">
 						<ion-label>Corporate</ion-label>
 					</ion-chip>
-					<ion-chip>
+					<ion-chip [ngClass]="{active: formData['categories'] == 'community'}"
+						(click)="setCategory('community')">
 						<ion-label>Community</ion-label>
 					</ion-chip>
-					<ion-chip>
+					<ion-chip [ngClass]="{active: formData['categories'] == 'school'}" (click)="setCategory('school')">
 						<ion-label>School</ion-label>
 					</ion-chip>
-					<ion-chip>
+					<ion-chip [ngClass]="{active: formData['categories'] == 'box_cricket'}"
+						(click)="setCategory('box_cricket')">
 						<ion-label>Box Cricket</ion-label>
 					</ion-chip>
-					<ion-chip>
+					<ion-chip [ngClass]="{active: formData['categories'] == 'other'}" (click)="setCategory('other')">
 						<ion-label>Other</ion-label>
 					</ion-chip>
 				</ion-col>
@@ -92,33 +102,35 @@
 				<ion-col size="12">
 					<h2>Select Ball Type</h2>
 					<div class="balls">
-						<div class="ball">
-							<img src="../../../assets/images/tennis.png" (click)="selectBal('tennis',$event)" />
+						<div class="ball" [ngClass]="{active: formData['ballType'] == 1}">
+							<img src="../../../assets/images/tennis.png" (click)="selectBal(1)" />
 							<p>Tennis</p>
 						</div>
-						<div class="ball">
-							<img src="../../../assets/images/leather.png" (click)="selectBal('leather',$event)" />
+						<div class="ball" [ngClass]="{active: formData['ballType'] == 2}">
+							<img src="../../../assets/images/leather.png" (click)="selectBal(2)" />
 							<p>Leather</p>
 						</div>
-						<div class="ball">
-							<img src="../../../assets/images/other.png" (click)="selectBal('other',$event)" />
+						<div class="ball" [ngClass]="{active: formData['ballType'] == 3}">
+							<img src="../../../assets/images/other.png" (click)="selectBal(3)" />
 							<p>Other</p>
 						</div>
 					</div>
 				</ion-col>
 			</ion-row>
-			<ion-radio-group value="biff">
+			<ion-radio-group [(ngModel)]="formData['numberOfOvers']">
 				<ion-row class="match_types">
 					<ion-col size="6">
 						<ion-item class="no-border" lines="none">
 							<ion-label text-wrap>Limited Overs</ion-label>
-							<ion-radio slot="start" value="a" color="danger"></ion-radio>
+							<ion-radio slot="start" value="1" color="danger">
+							</ion-radio>
 						</ion-item>
 					</ion-col>
 					<ion-col size="6">
 						<ion-item class="no-border" lines="none">
 							<ion-label text-wrap>Test Match</ion-label>
-							<ion-radio slot="start" value="b" color="danger"></ion-radio>
+							<ion-radio slot="start" value="2" color="danger">
+							</ion-radio>
 						</ion-item>
 					</ion-col>
 				</ion-row>
@@ -126,19 +138,20 @@
 					<ion-col>
 						<ion-item class="no-border">
 							<ion-label position="floating">Addtags (maximum 5 tags)</ion-label>
-							<ion-input></ion-input>
+							<ion-input [(ngModel)]="formData['tags']"></ion-input>
 						</ion-item>
 						<small>Reference site about Lorem Ipsum, giving information on its origins, as well
 							as a random Lipsum generator.</small>
 						<ion-item lines="none" class="more-details">
 							<ion-textarea placeholder="Add more details like prizes, awards, entry fees, rule, etc."
-								rows="5"></ion-textarea>
+								rows="5" [(ngModel)]="formData['details']"></ion-textarea>
 						</ion-item>
 					</ion-col>
 				</ion-row>
 				<ion-row>
 					<ion-col>
-						<ion-button class="primary-button next-button" expand="block" (click)="next()">NEXT</ion-button>
+						<ion-button class="primary-button next-button" expand="block" (click)="saveTournament()">NEXT
+						</ion-button>
 					</ion-col>
 				</ion-row>
 			</ion-radio-group>

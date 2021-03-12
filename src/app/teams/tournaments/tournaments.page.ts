@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
 	selector: 'app-tournaments',
@@ -11,7 +12,9 @@ export class TournamentsPage implements OnInit {
 		initialSlide: 1,
 		speed: 400
 	};
-	constructor() { }
+	constructor(
+		public alertController: AlertController
+	) { }
 
 	ngOnInit() {
 		// setTimeout(() => {
@@ -31,5 +34,7 @@ export class TournamentsPage implements OnInit {
 			inline: 'center'
 		});
 	}
+
+
 
 }

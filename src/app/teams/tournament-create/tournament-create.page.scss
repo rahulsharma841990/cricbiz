@@ -3,6 +3,13 @@
     height: 170px;
 
     ion-card-content {
+        .banner-image {
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            margin-top: -11px;
+        }
         text-align: center;
         .placeholder-image {
             width: 100px;
@@ -138,5 +145,18 @@
     }
     .next-button {
         height: 48px;
+    }
+}
+
+tag-input {
+    --highlight-color-focused: none;
+    box-shadow: none;
+    --box-shadow: none;
+}
+
+.category {
+    .active {
+        background: #cf2106;
+        color: #fff;
     }
 }

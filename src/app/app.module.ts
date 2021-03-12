@@ -6,16 +6,40 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+import { FirebaseX } from '@ionic-native/firebase-x/ngx';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CustomHttpInterceptorService } from './custom-http-interceptor.service';
+import { Camera } from '@ionic-native/camera/ngx';
+import { Crop } from '@ionic-native/crop/ngx';
+import { File } from '@ionic-native/file/ngx';
+
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
+
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule
-  ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
+	declarations: [AppComponent],
+	entryComponents: [],
+	imports: [
+
+		BrowserAnimationsModule,
+
+		BrowserModule,
+		IonicModule.forRoot(),
+		AppRoutingModule,
+		HttpClientModule
+	],
+	providers: [
+		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+		{ provide: HTTP_INTERCEPTORS, useClass: CustomHttpInterceptorService, multi: true },
+		FirebaseAuthentication,
+		FirebaseX,
+		Camera,
+		Crop,
+		File
+	],
+	bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,75 +1,47 @@
 <header class="otp-header">
-  <ion-row>
-    <ion-col align="center" class="otp-header-title"> Verification </ion-col>
-  </ion-row>
-  <ion-row class="otp-header-icon">
-    <ion-col size="12" align="center">
-      <img src="assets/icon/otp.svg" alt="" />
-    </ion-col>
-  </ion-row>
+	<ion-row>
+		<ion-col align="center" class="otp-header-title"> Verification </ion-col>
+	</ion-row>
+	<ion-row class="otp-header-icon">
+		<ion-col size="12" align="center">
+			<img src="assets/icon/otp.svg" alt="" />
+		</ion-col>
+	</ion-row>
 </header>
 
 <ion-content class="otp">
-  <ion-row class="ion-justify-content-center otp-title">
-    <ion-col size="10">
-      <p>Please enter the verification code we sent on your mobile</p>
-    </ion-col>
-  </ion-row>
+	<ion-row class="ion-justify-content-center otp-title">
+		<ion-col size="10">
+			<p>Please enter the verification code we sent on your mobile</p>
+		</ion-col>
+	</ion-row>
 
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="12" align="center"> <h4>Enter code here</h4> </ion-col>
+	<ion-row class="ion-justify-content-center">
+		<ion-col size="12" align="center">
+			<h4>Enter code here</h4>
+		</ion-col>
 
-    <ion-col size="10" class="otp-input-container d-flex gap-h">
-      <ion-input
-        type="text"
-        maxLength="1"
-        value=""
-        class="otp-input"
-      ></ion-input>
-      <ion-input
-        type="text"
-        maxLength="1"
-        value=""
-        class="otp-input"
-      ></ion-input>
-      <ion-input
-        type="text"
-        maxLength="1"
-        value=""
-        class="otp-input"
-      ></ion-input>
-      <ion-input
-        type="text"
-        maxLength="1"
-        value=""
-        class="otp-input"
-      ></ion-input>
-      <ion-input
-        type="text"
-        maxLength="1"
-        value=""
-        class="otp-input"
-      ></ion-input>
-      <ion-input
-        type="text"
-        maxLength="1"
-        value=""
-        class="otp-input"
-      ></ion-input>
-    </ion-col>
-  </ion-row>
-  <ion-row class="ion-justify-content-center mt-1">
-    <div class="submit-btn-box">
-      <button class="primary-button" [routerLink]="['/dashboard']">
-        Submit
-      </button>
-    </div>
-  </ion-row>
-  <ion-row class="ion-justify-content-center mt-1">
-    <div class="submit-btn-box">
-      <ion-tab-button>
-        <ion-label>Resend code</ion-label>
-      </ion-tab-button>
-    </div>
-  </ion-row>
+		<ion-col size="10" class="otp-input-container d-flex gap-h">
+			<ion-input type="text" maxLength="1" value="" [(ngModel)]="otpCode[0]" class="otp-input"></ion-input>
+			<ion-input type="text" maxLength="1" value="" [(ngModel)]="otpCode[1]" class="otp-input"></ion-input>
+			<ion-input type="text" maxLength="1" value="" [(ngModel)]="otpCode[2]" class="otp-input"></ion-input>
+			<ion-input type="text" maxLength="1" value="" [(ngModel)]="otpCode[3]" class="otp-input"></ion-input>
+			<ion-input type="text" maxLength="1" value="" [(ngModel)]="otpCode[4]" class="otp-input"></ion-input>
+			<ion-input type="text" maxLength="1" value="" [(ngModel)]="otpCode[5]" class="otp-input"></ion-input>
+		</ion-col>
+	</ion-row>
+	<ion-row class="ion-justify-content-center mt-1">
+		<div class="submit-btn-box">
+			<button class="primary-button" (click)="verifyOtp()">
+				Submit
+			</button>
+		</div>
+	</ion-row>
+	<ion-row class="ion-justify-content-center mt-1">
+		<div class="submit-btn-box">
+			<ion-tab-button>
+				<ion-label>Resend code</ion-label>
+			</ion-tab-button>
+		</div>
+	</ion-row>
 </ion-content>

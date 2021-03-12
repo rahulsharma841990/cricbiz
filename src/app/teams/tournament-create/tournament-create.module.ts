@@ -8,11 +8,13 @@ import { IonicModule } from '@ionic/angular';
 import { TournamentCreatePageRoutingModule } from './tournament-create-routing.module';
 
 import { TournamentCreatePage } from './tournament-create.page';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TagInputModule } from 'ngx-chips';
 
 @NgModule({
   imports: [
+    TagInputModule,
+    ReactiveFormsModule,
     CommonModule,
     FormsModule,
     IonicModule,

@@ -126,7 +126,11 @@ const routes: Routes = [
   {
     path: 'outhow',
     loadChildren: () => import('./teams/outhow/outhow.module').then( m => m.OuthowPageModule)
+  },  {
+    path: 'postview',
+    loadChildren: () => import('./news/postview/postview.module').then( m => m.PostviewPageModule)
   }
+
 
 ];
 

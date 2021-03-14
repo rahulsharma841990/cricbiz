@@ -1,0 +1,120 @@
+.primarycolor{color:var(--ion-color-primary);}
+.ads{
+    width: 24px;
+    margin-right: 4px;
+}
+.postad{
+    font-size: 13px;
+    display: flex;
+    gap:0.25rem;
+    position: relative;
+    padding-left: 2.2rem;
+
+    img{width: 20px; position: absolute;
+        left: 0.5rem;
+        top: 9px;
+    }
+}
+.post{
+    background:#fff;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    box-shadow: 0px 2px 20px 0px rgb(0 0 0 / 18%);
+    &-title{
+       h4{
+           flex:1 1 80%;
+           font-size: 1rem;
+       } 
+       img{width: 18px;}
+    }
+
+    &-content{
+      display: flex;
+      flex-flow:row wrap;
+      gap:0.5rem;
+      padding-top:0px;
+
+      .items{
+          flex:1 1 47%;
+          display: flex;
+          flex-flow: row wrap;
+          gap:0.25rem;
+
+          .img{
+           flex:1 1 46%; 
+           position: relative;
+           &::before{
+               content:'';
+               position: absolute;
+               background:rgba(0, 0, 0, 0.459);
+               height: 100%;
+               width: 100%;
+           }
+           .view{
+               position: absolute;
+               top:10px;
+               right: 10px;
+               img{
+                   width: 28px;
+               }
+           }
+           .plus{
+               position: absolute;
+               top: 30%;
+               left: 35%;
+               font-weight: bold;
+               font-size: 24px;
+               color:#fff;
+           }
+           img{
+               width: 100%;
+               height: 100%;
+           }
+          }
+          
+         
+      }
+    }
+
+    .primary-button{width: 100%; font-size: 16px;}
+    .likebudge{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: linear-gradient(
+            180deg,
+            rgba(213, 31, 1, 1) 14%,
+            rgba(157, 50, 46, 1) 75%
+          );
+        ion-icon{color:#fff}
+
+    }
+    .textdate{font-size: 10px; text-align: right;}
+    .textmedium{font-size: 14px;}
+.likesbtnContainer{
+  .like{
+       background-color: var(--ion-color-tertiary);
+       color:#fff
+}
+.likesbtnContainer-btn{
+    width: 50%; 
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    display: flex;
+    gap:6px;
+    align-items: center;
+    justify-content: center;
+    svg{
+        width: 24px;
+        fill:#fff;
+    }
+  
+}
+.share{
+    svg{
+        width: 24px;
+        fill:#000;
+    }
+}
+}
+}

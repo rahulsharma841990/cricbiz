@@ -1,0 +1,130 @@
+.switch {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  em {
+    font-size: 14px;
+    color: var(--ion-color-medium);
+  }
+  .tgl {
+    display: none;
+
+    // add default box-sizing for this scope
+    &,
+    &:after,
+    &:before,
+    & *,
+    & *:after,
+    & *:before,
+    & + .tgl-btn {
+      box-sizing: border-box;
+      &::selection {
+        background: none;
+      }
+    }
+
+    + .tgl-btn {
+      outline: 0;
+      display: block;
+      width: 3em;
+      height: 1.25em;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+      &:after,
+      &:before {
+        position: relative;
+        display: block;
+        content: "";
+        width: 50%;
+        height: 100%;
+      }
+
+      &:after {
+        left: 2px;
+        width: 15px;
+        height: 15px;
+      }
+
+      &:before {
+        display: none;
+      }
+    }
+
+    &:checked + .tgl-btn:after {
+      left: 50%;
+    }
+  }
+
+  // themes
+  .tgl-light {
+    + .tgl-btn {
+      background: var(--ion-color-dark-tint);
+      border-radius: 2em;
+      padding: 2px;
+      transition: all 0.4s ease;
+      &:after {
+        border-radius: 50%;
+        background: #fff;
+        transition: all 0.2s ease;
+      }
+    }
+
+    &:checked + .tgl-btn {
+      background: var(--ion-color-primary);
+    }
+  }
+}
+
+p,
+.or {
+  color: var(--ion-color-medium);
+}
+
+.or {
+  font-weight: bold;
+  font-size: 24px;
+  opacity: 0.5;
+}
+
+.addTeambox {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  &-item {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &_uppersection {
+      height: 90px;
+      width: 100%;
+      background: #2ac8d4;
+      padding: 0.5rem;
+      position: relative;
+      b {
+        font-size: 24px;
+        color: #ffffff;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+      }
+      .teamdelete {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        border-radius: 50%;
+        background: url("../../../assets/icon/bin.svg") no-repeat red;
+        width: 20px;
+        height: 20px;
+        background-size: 12px;
+        background-position: center;
+      }
+    }
+
+    &_footer {
+      background: var(--gray);
+      padding: 0.35rem;
+    }
+  }
+}

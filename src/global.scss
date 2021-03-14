@@ -130,7 +130,10 @@ p {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-
+.my-2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 .my-1 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -251,4 +254,10 @@ p {
 }
 .outerbox {
   border-radius: 10px;
+}
+
+.grid-row {
+  display: grid;
+  grid-gap: 0.5rem;
+  width: 100%;
 }

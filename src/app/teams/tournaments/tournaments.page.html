@@ -1,46 +1,135 @@
 <app-header showsearch="true"></app-header>
-<ion-content>
-	<div class="segments-container">
-		<ion-segment value="my_tournaments" class="tournament-tabs" (ionChange)="changeScreen($event)">
-			<ion-segment-button value="my_tournaments" id="my_tournaments">
-				<ion-label>My Tournaments</ion-label>
-			</ion-segment-button>
-			<ion-segment-button value="my_matches" id="my_matches">
-				<ion-label>My Matches</ion-label>
-			</ion-segment-button>
-			<ion-segment-button value="tournaments" id="tournaments">
-				<ion-label>Tournaments</ion-label>
-			</ion-segment-button>
-			<ion-segment-button value="teams" id="teams">
-				<ion-label>Teams</ion-label>
-			</ion-segment-button>
-			<ion-segment-button value="summary" id="summary">
-				<ion-label>Summary</ion-label>
-			</ion-segment-button>
-			<ion-segment-button value="gallery" id="gallery">
-				<ion-label>Gallery</ion-label>
-			</ion-segment-button>
-			<ion-segment-button value="scorecard" id="scorecard">
-				<ion-label>Scorecard</ion-label>
-			</ion-segment-button>
-			<ion-segment-button value="live" id="live">
-				<ion-label>Live</ion-label>
-			</ion-segment-button>
-			<ion-segment-button value="information" id="information">
-				<ion-label>Information</ion-label>
-			</ion-segment-button>
-		</ion-segment>
-	</div>
+<ion-content class="gray-bg">
+  <div class="segments-container">
+    <ion-segment
+      value="my_tournaments"
+      class="tournament-tabs"
+      [(ngModel)]="changeScreen"
+    >
+      <ion-segment-button value="my_tournament" id="my_tournaments">
+        <ion-label>My Tournaments</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="my_matches" id="my_matches">
+        <ion-label>My Matches</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="tournaments" id="tournaments">
+        <ion-label>Tournaments</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="teams" id="teams">
+        <ion-label>Teams</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="summary" id="summary">
+        <ion-label>Summary</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="gallery" id="gallery">
+        <ion-label>Gallery</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="scorecard" id="scorecard">
+        <ion-label>Scorecard</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="live" id="live">
+        <ion-label>Live</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="information" id="information">
+        <ion-label>Information</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="changeScreen">
+    <div *ngSwitchCase="'my_tournament'" class="mytournament mt-1">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="7" class="mytournament-title"
+          ><em>Want to host a tournament?</em></ion-col
+        >
+        <ion-col size="5"
+          ><button class="btn btn-primary-rounded">Register Now</button>
+        </ion-col>
+      </ion-row>
 
-	<ion-slides pager="false" [options]="slideOpts">
-		<ion-slide>
-			<h1>Slide 1</h1>
-		</ion-slide>
-		<ion-slide>
-			<h1>Slide 2</h1>
-		</ion-slide>
-		<ion-slide>
-			<h1>Slide 3</h1>
-		</ion-slide>
-	</ion-slides>
+      <ion-row>
+        <ion-col size="12">
+          <ion-card class="tournament-card">
+            <ion-card-content class="card-content">
+              <div class="tournament-card-header">
+                <img src="assets/images/tournamentPost.png" />
+                <img class="ongoing" src="assets/images/OnGoing.png" />
+              </div>
+
+              <div class="card-footer">
+                <ion-row class="ion-padding">
+                  <ion-col size="10" class="tournamentDetails"
+                    ><h3>Saurav Cricket Association</h3>
+                    <em>Date: 10 From 25Aug to 5:30 Pm</em>
+                  </ion-col>
+                  <ion-col size="2" class="d-flex fx-column follow">
+                    <img src="assets/images/follow.png" />
+                    <em>Follow</em>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="tournament-card">
+            <ion-card-content class="card-content">
+              <div class="tournament-card-header">
+                <img src="assets/images/tournamentPost.png" />
+                <img class="ongoing" src="assets/images/OnGoing.png" />
+              </div>
+
+              <div class="card-footer">
+                <ion-row class="ion-padding">
+                  <ion-col size="10" class="tournamentDetails"
+                    ><h3>Saurav Cricket Association</h3>
+                    <em>Date: 10 From 25Aug to 5:30 Pm</em>
+                  </ion-col>
+                  <ion-col size="2" class="d-flex fx-column follow">
+                    <img src="assets/images/follow.png" />
+                    <em>Follow</em>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card class="tournament-card">
+            <ion-card-content class="card-content">
+              <div class="tournament-card-header">
+                <img src="assets/images/tournamentPost.png" />
+                <img class="ongoing" src="assets/images/OnGoing.png" />
+              </div>
+
+              <div class="card-footer">
+                <ion-row class="ion-padding">
+                  <ion-col size="10" class="tournamentDetails"
+                    ><h3>Saurav Cricket Association</h3>
+                    <em>Date: 10 From 25Aug to 5:30 Pm</em>
+                  </ion-col>
+                  <ion-col size="2" class="d-flex fx-column follow">
+                    <img src="assets/images/follow.png" />
+                    <em>Follow</em>
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div *ngSwitchCase="'my_matches'">
+      <ion-slides pager="false" [options]="slideOpts">
+        <ion-slide>
+          <h1>Slide 1</h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>Slide 2</h1>
+        </ion-slide>
+        <ion-slide>
+          <h1>Slide 3</h1>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
 </ion-content>
+<app-tabs-menu></app-tabs-menu>

@@ -259,6 +259,9 @@ p {
   border-radius: 10px;
 }
 
+.fx-column{
+  flex-direction: column;
+}
 .grid-row {
   display: grid;
   grid-gap: 0.5rem;

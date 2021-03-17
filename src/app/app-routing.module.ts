@@ -133,6 +133,14 @@ const routes: Routes = [
   {
     path: 'cricket-tips',
     loadChildren: () => import('./teams/cricket-tips/cricket-tips.module').then( m => m.CricketTipsPageModule)
+  },
+  {
+    path: 'cricket-associations',
+    loadChildren: () => import('./teams/cricket-associations/cricket-associations.module').then( m => m.CricketAssociationsPageModule)
+  },
+  {
+    path: 'icc',
+    loadChildren: () => import('./teams/icc/icc.module').then( m => m.IccPageModule)
   }
 
 

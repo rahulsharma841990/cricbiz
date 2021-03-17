@@ -129,6 +129,10 @@ const routes: Routes = [
   },  {
     path: 'postview',
     loadChildren: () => import('./news/postview/postview.module').then( m => m.PostviewPageModule)
+  },
+  {
+    path: 'cricket-tips',
+    loadChildren: () => import('./teams/cricket-tips/cricket-tips.module').then( m => m.CricketTipsPageModule)
   }
 
 

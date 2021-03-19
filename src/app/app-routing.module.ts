@@ -141,6 +141,14 @@ const routes: Routes = [
   {
     path: 'icc',
     loadChildren: () => import('./teams/icc/icc.module').then( m => m.IccPageModule)
+  },
+  {
+    path: 'start-innings',
+    loadChildren: () => import('./teams/start-innings/start-innings.module').then( m => m.StartInningsPageModule)
+  },
+  {
+    path: 'my-status',
+    loadChildren: () => import('./teams/my-status/my-status.module').then( m => m.MyStatusPageModule)
   }
 
 

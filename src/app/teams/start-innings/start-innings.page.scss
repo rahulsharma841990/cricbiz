@@ -1,0 +1,32 @@
+.inning-heading {
+  width: 2rem;
+}
+.inner-card {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 95%;
+  margin: auto;
+  flex-direction: column;
+  text-align: center;
+  background: #fff;
+  box-shadow: 1px 2px 17px -4px #0000008a;
+
+  img {
+    padding: 0.75rem 1rem 0px 8px;
+    width: 110px;
+  }
+}
+.select-stricker {
+  text-align: center;
+  --background: rgb(213, 31, 1);
+  --background: linear-gradient(
+    180deg,
+    rgba(213, 31, 1, 1) 14%,
+    rgba(157, 50, 46, 1) 75%
+  );
+  background: var(--background);
+  padding: 0.5rem 0px;
+  color: #fff;
+  width: 95%;
+  margin: auto;
+}

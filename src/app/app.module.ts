@@ -14,9 +14,12 @@ import { CustomHttpInterceptorService } from './custom-http-interceptor.service'
 import { Camera } from '@ionic-native/camera/ngx';
 import { Crop } from '@ionic-native/crop/ngx';
 import { File } from '@ionic-native/file/ngx';
-
+import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
+import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
+import { IonicCustomAlertModule } from 'ionic-custom-alert';
+import { DatePicker } from '@ionic-native/date-picker/ngx';
 
 
 @NgModule({
@@ -25,7 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 	imports: [
 
 		BrowserAnimationsModule,
-
+		IonicCustomAlertModule,
 		BrowserModule,
 		IonicModule.forRoot(),
 		AppRoutingModule,
@@ -37,8 +40,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 		FirebaseAuthentication,
 		FirebaseX,
 		Camera,
+		DatePicker,
 		Crop,
-		File
+		File,
+		Contacts,
+		QRScanner
 	],
 	bootstrap: [AppComponent],
 })

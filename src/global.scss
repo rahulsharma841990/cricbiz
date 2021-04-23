@@ -55,10 +55,25 @@
 	margin-bottom: 10px;
 }
 
+.primary-bg {
+	--background: rgb(213, 31, 1);
+	--background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
+	background: var(--background);
+}
+
 .primary-button {
 	--background: rgb(213, 31, 1);
 	--background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
 	background: var(--background);
+	text-transform: none;
+	// font-weight: 500;
+	font-weight: normal;
+	height: 45px;
+	color: #fff;
+}
+.primary-button-no-bg {
+	--background: rgb(213, 31, 1);
+	--background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
 	text-transform: none;
 	// font-weight: 500;
 	font-weight: normal;
@@ -256,6 +271,10 @@ p {
 	background: var(--ion-color-primary-contrast);
 }
 
+.text-white {
+	color: #fff;
+}
+
 .px-1 {
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -268,4 +287,25 @@ p {
 }
 .outerbox {
 	border-radius: 10px;
+}
+
+.qr-scanner-modal {
+	background: none transparent;
+	--background: none transparent;
+	--backdrop-opacity: 0 !important;
+}
+
+.confirm-alert {
+	.alert-wrapper {
+		--min-width: 86%;
+		.alert-message {
+			max-height: 270px;
+		}
+	}
+}
+
+.teams-searchbar {
+	.searchbar-input {
+		height: 50px;
+	}
 }

@@ -1,0 +1,25 @@
+<hr />
+<ion-list class="ion-no-padding">
+	<ion-item lines="none">
+		<ion-thumbnail slot="start">
+			<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="
+				class="user-image">
+		</ion-thumbnail>
+		<ion-label>
+			<h2>{{ data.user.data.name }}</h2>
+		</ion-label>
+	</ion-item>
+</ion-list>
+<ion-row class="ion-no-padding">
+	<ion-col align="center">
+		<ion-item align="center" class="digit-input">
+			<ion-label position="floating">Enter last 5-digits</ion-label>
+			<ion-input [(ngModel)]="data.mobileNumberLastDigits"></ion-input>
+		</ion-item>
+	</ion-col>
+</ion-row>
+<ion-row>
+	<ion-col>
+		<ion-button class="primary-button" expand="full" (click)="addToMyTeam()">ADD</ion-button>
+	</ion-col>
+</ion-row>

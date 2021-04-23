@@ -13,15 +13,15 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./teams/dashboard/dashboard.module').then(m => m.DashboardPageModule)
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardPageModule)
   },
   {
     path: 'tournament-create',
-    loadChildren: () => import('./teams/tournament-create/tournament-create.module').then(m => m.TournamentCreatePageModule)
+    loadChildren: () => import('./tournament-create/tournament-create.module').then(m => m.TournamentCreatePageModule)
   },
   {
     path: 'tournament-created',
-    loadChildren: () => import('./teams/tournament-created/tournament-created.module').then(m => m.TournamentCreatedPageModule)
+    loadChildren: () => import('./tournament-created/tournament-created.module').then(m => m.TournamentCreatedPageModule)
   },
   {
     path: 'my-profile',
@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'tournaments',
-    loadChildren: () => import('./teams/tournaments/tournaments.module').then(m => m.TournamentsPageModule)
+    loadChildren: () => import('./tournaments/tournaments.module').then(m => m.TournamentsPageModule)
   },
   {
     path: 'team-create',
@@ -48,84 +48,104 @@ const routes: Routes = [
     loadChildren: () => import('./teams/online-players/online-players.module').then(m => m.OnlinePlayersPageModule)
   },
   {
-    path: 'add-player-bbl',
-    loadChildren: () => import('./teams/add-player-bbl/add-player-bbl.module').then(m => m.AddPlayerBblPageModule)
+    path: 'add-player-to-team',
+    loadChildren: () => import('./teams/add-player-to-team/add-player-bbl.module').then(m => m.AddPlayerBblPageModule)
   },
   {
     path: 'starta-match',
-    loadChildren: () => import('./teams/starta-match/starta-match.module').then(m => m.StartaMatchPageModule)
-  },
-  {
-    path: 'select-team-b',
-    loadChildren: () => import('./teams/select-team-b/select-team-b.module').then(m => m.SelectTeamBPageModule)
+    loadChildren: () => import('./matches/starta-match/starta-match.module').then(m => m.StartaMatchPageModule)
   },
   {
     path: 'select-captain',
-    loadChildren: () => import('./teams/select-captain/select-captain.module').then(m => m.SelectCaptainPageModule)
+    loadChildren: () => import('./select-captain/select-captain.module').then(m => m.SelectCaptainPageModule)
   },
   {
     path: 'select-stricker',
-    loadChildren: () => import('./teams/select-stricker/select-stricker.module').then(m => m.SelectStrickerPageModule)
+    loadChildren: () => import('./select-stricker/select-stricker.module').then(m => m.SelectStrickerPageModule)
   },
   {
     path: 'otp',
-    loadChildren: () => import('./authenticate/otp/otp.module').then( m => m.OtpPageModule)
+    loadChildren: () => import('./authenticate/otp/otp.module').then(m => m.OtpPageModule)
   },
   {
     path: 'bowling-maching',
-    loadChildren: () => import('./teams/bowling-maching/bowling-maching.module').then( m => m.BowlingMachingPageModule)
+    loadChildren: () => import('./bowling-maching/bowling-maching.module').then(m => m.BowlingMachingPageModule)
   },
   {
     path: 'commentators',
-    loadChildren: () => import('./teams/commentators/commentators.module').then( m => m.CommentatorsPageModule)
+    loadChildren: () => import('./commentators/commentators.module').then(m => m.CommentatorsPageModule)
   },
   {
     path: 'cricket-news',
-    loadChildren: () => import('./news/cricket-news/cricket-news.module').then( m => m.CricketNewsPageModule)
+    loadChildren: () => import('./news/cricket-news/cricket-news.module').then(m => m.CricketNewsPageModule)
   },
   {
     path: 'cricket-news-internation',
-    loadChildren: () => import('./news/cricket-news-internation/cricket-news-internation.module').then( m => m.CricketNewsInternationPageModule)
+    loadChildren: () => import('./news/cricket-news-internation/cricket-news-internation.module').then(m => m.CricketNewsInternationPageModule)
   },
   {
     path: 'cricket-clubs',
-    loadChildren: () => import('./news/cricket-clubs/cricket-clubs.module').then( m => m.CricketClubsPageModule)
+    loadChildren: () => import('./news/cricket-clubs/cricket-clubs.module').then(m => m.CricketClubsPageModule)
   },
   {
     path: 'commentators-details',
-    loadChildren: () => import('./teams/commentators-details/commentators-details.module').then( m => m.CommentatorsDetailsPageModule)
+    loadChildren: () => import('./commentators-details/commentators-details.module').then(m => m.CommentatorsDetailsPageModule)
   },
   {
     path: 'emerging-news',
-    loadChildren: () => import('./news/emergingCricket/emerging-news/emerging-news.module').then( m => m.EmergingNewsPageModule)
+    loadChildren: () => import('./news/emergingCricket/emerging-news/emerging-news.module').then(m => m.EmergingNewsPageModule)
   },
   {
     path: 'unattempted',
-    loadChildren: () => import('./quiz/unattempted/unattempted.module').then( m => m.UnattemptedPageModule)
+    loadChildren: () => import('./quiz/unattempted/unattempted.module').then(m => m.UnattemptedPageModule)
   },
   {
     path: 'add-team',
-    loadChildren: () => import('./teams/add-team/add-team.module').then( m => m.AddTeamPageModule)
+    loadChildren: () => import('./teams/add-team/add-team.module').then(m => m.AddTeamPageModule)
   },
   {
     path: 'awards',
-    loadChildren: () => import('./teams/awards/awards.module').then( m => m.AwardsPageModule)
+    loadChildren: () => import('./teams/awards/awards.module').then(m => m.AwardsPageModule)
   },
   {
     path: 'badges',
-    loadChildren: () => import('./teams/badges/badges.module').then( m => m.BadgesPageModule)
+    loadChildren: () => import('./badges/badges.module').then(m => m.BadgesPageModule)
   },
   {
     path: 'connections',
-    loadChildren: () => import('./teams/connections/connections.module').then( m => m.ConnectionsPageModule)
+    loadChildren: () => import('./connections/connections.module').then(m => m.ConnectionsPageModule)
   },
   {
     path: 'photos',
-    loadChildren: () => import('./teams/photos/photos.module').then( m => m.PhotosPageModule)
+    loadChildren: () => import('./photos/photos.module').then(m => m.PhotosPageModule)
   },
   {
     path: 'outhow',
-    loadChildren: () => import('./teams/outhow/outhow.module').then( m => m.OuthowPageModule)
+    loadChildren: () => import('./outhow/outhow.module').then(m => m.OuthowPageModule)
+  },
+  {
+    path: 'match-types',
+    loadChildren: () => import('./matches/match-types/match-types.module').then(m => m.MatchTypesPageModule)
+  },
+  {
+    path: 'my-teams',
+    loadChildren: () => import('./teams/my-teams/my-teams.module').then(m => m.MyTeamsPageModule)
+  },
+  {
+    path: 'list-of-players',
+    loadChildren: () => import('./teams/list-of-players/list-of-players.module').then(m => m.ListOfPlayersPageModule)
+  },
+  {
+    path: 'squad',
+    loadChildren: () => import('./matches/squad/squad.module').then(m => m.SquadPageModule)
+  },
+  {
+    path: 'select-round',
+    loadChildren: () => import('./matches/select-round/select-round.module').then( m => m.SelectRoundPageModule)
+  },
+  {
+    path: 'add-rounds',
+    loadChildren: () => import('./matches/add-rounds/add-rounds.module').then( m => m.AddRoundsPageModule)
   }
 
 ];

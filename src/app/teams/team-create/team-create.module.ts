@@ -16,7 +16,8 @@ import { TeamCreatePage } from './team-create.page';
     IonicModule,
     SharedModule,
     TeamCreatePageRoutingModule,
+    SharedModule
   ],
   declarations: [TeamCreatePage],
 })
-export class TeamCreatePageModule {}
+export class TeamCreatePageModule { }

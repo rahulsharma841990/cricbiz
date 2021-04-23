@@ -42,21 +42,21 @@
 								<img src="../assets/images/sidemenus/add-tournament.png" slot="start" />
 								<ion-label>Add a Tournament</ion-label>
 							</ion-item>
-							<ion-item button lines="none">
+							<ion-item button lines="none" (click)="goTo('match-types')">
 								<img src="../assets/images/sidemenus/start-match.png" slot="start" />
 								<ion-label>Start a Match</ion-label>
 							</ion-item>
-							<ion-item button lines="none">
+							<ion-item button lines="none" (click)="goTo('tournaments','root')">
 								<img src="../assets/images/sidemenus/my-tournaments.png" slot="start" />
-								<ion-label>My Tournament</ion-label>
+								<ion-label>My Tournaments</ion-label>
 							</ion-item>
 							<ion-item button lines="none">
 								<img src="../assets/images/sidemenus/my-matches.png" slot="start" />
 								<ion-label>My Matches</ion-label>
 							</ion-item>
-							<ion-item button lines="none">
+							<ion-item button lines="none" (click)="goTo('my-teams')">
 								<img src="../assets/images/sidemenus/my-teams.png" slot="start" />
-								<ion-label>My Terms</ion-label>
+								<ion-label>My Teams</ion-label>
 							</ion-item>
 							<ion-item button lines="none">
 								<img src="../assets/images/sidemenus/my-insight.png" slot="start" />

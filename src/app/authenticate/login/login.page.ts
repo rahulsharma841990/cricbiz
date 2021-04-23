@@ -1,9 +1,9 @@
-import { UtilsService } from 'src/app/utils.service';
+import { UtilsService } from 'src/app/services/utils.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { FirebaseX } from '@ionic-native/firebase-x/ngx';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
 	selector: 'app-login',

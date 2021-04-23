@@ -1,0 +1,22 @@
+<app-form-headers modal="true" title="{{ titleText }}" customclass="redBg"></app-form-headers>
+<ion-content class="gray-bg ion-no-padding">
+	<ion-row>
+		<ion-col>
+			<ion-searchbar showCancelButton="focus" (ionChange)="searchRecords($event)" #input debounce="500"
+				placeholder="{{ titleText }}" [animated]="true" focus>
+				<div *ngIf="searching" class="spinner-container">
+					<ion-spinner></ion-spinner>
+				</div>
+			</ion-searchbar>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+			<ion-list *ngIf="records.length > 0">
+				<ion-item *ngFor="let record of records" (click)="selectRecord(record)">
+					<ion-label>{{ record.name }}</ion-label>
+				</ion-item>
+			</ion-list>
+		</ion-col>
+	</ion-row>
+</ion-content>

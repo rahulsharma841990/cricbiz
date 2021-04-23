@@ -1,0 +1,148 @@
+<app-header showsearch="true"></app-header>
+<ion-content class="gray-bg">
+	<div class="segments-container">
+		<ion-segment [value]="selectedTab" class="tournament-tabs" (ionChange)="changeScreen($event)">
+			<ion-segment-button value="my_tournaments" id="my_tournaments">
+				<ion-label>My Tournaments</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="my_matches" id="my_matches">
+				<ion-label>My Matches</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="tournaments" id="tournaments">
+				<ion-label>Tournaments</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="teams" id="teams">
+				<ion-label>Teams</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="summary" id="summary">
+				<ion-label>Summary</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="gallery" id="gallery">
+				<ion-label>Gallery</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="scorecard" id="scorecard">
+				<ion-label>Scorecard</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="live" id="live">
+				<ion-label>Live</ion-label>
+			</ion-segment-button>
+			<ion-segment-button value="information" id="information">
+				<ion-label>Information</ion-label>
+			</ion-segment-button>
+		</ion-segment>
+	</div>
+
+	<ion-slides pager="false" [options]="slideOpts" #SwipedTabsSlider (ionSlideDidChange)="changeSlide($event)">
+		<ion-slide class="screens">
+			<ion-row class="io-padding tournament-cards-row">
+				<ion-col size="12">
+					<div class="register-tournament">
+						<h6>What to host a tournament?</h6>
+						<ion-button class="btn-rounded">
+							<span class="button-inner">Register Now</span>
+						</ion-button>
+					</div>
+				</ion-col>
+				<ion-col size="12">
+					<div class="tournament-cards" *ngFor="let tournament of tournamentsList"
+						(click)="viewTournament(tournament)">
+						<img src="../../assets/images/ongoing.png" class="on-going-icon" />
+						<ion-card>
+							<div class="tourn-banner">
+								<img src="{{ tournament?.banner_image }}" />
+							</div>
+							<ion-card-content class="tourn-content">
+								<ion-row>
+									<ion-col size="10">
+										<h3>{{ tournament?.name }}</h3>
+										<b>Date: From {{ tournament?.start_date }} To {{ tournament?.end_date }}</b>
+										<br />
+										<b>{{ tournament?.city.name }}</b>
+									</ion-col>
+									<ion-col size="2" align="center">
+										<img src="../../assets/images/follow-icon.png" class="follow-icon" />
+									</ion-col>
+								</ion-row>
+							</ion-card-content>
+						</ion-card>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-slide>
+		<ion-slide class="screens">
+			<ion-row class="io-padding tournament-cards-row">
+				<ion-col size="12">
+					<div class="register-tournament">
+						<h6>What to host a tournament?</h6>
+						<ion-button class="btn-rounded">
+							<span class="button-inner">Register Now</span>
+						</ion-button>
+					</div>
+				</ion-col>
+				<ion-col size="12">
+					<div class="tournament-cards">
+						<img src="../../assets/images/ongoing.png" class="on-going-icon" />
+						<ion-card>
+							<div class="tourn-banner">
+								<img src="../../assets/images/tourn-banner.png" />
+							</div>
+							<ion-card-content class="tourn-content">
+								<ion-row>
+									<ion-col size="10">
+										<h3>Saurashtra Cricket Association</h3>
+										<b>Date: From 25-Aug-2020 To 15-Sep-2020</b>
+										<br />
+										<b>Amritsar</b>
+									</ion-col>
+									<ion-col size="2" align="center">
+										<img src="../../assets/images/follow-icon.png" class="follow-icon" />
+									</ion-col>
+								</ion-row>
+							</ion-card-content>
+						</ion-card>
+					</div>
+					<div class="tournament-cards">
+						<img src="../../assets/images/ongoing.png" class="on-going-icon" />
+						<ion-card>
+							<div class="tourn-banner">
+								<img src="../../assets/images/tourn-banner.png" />
+							</div>
+							<ion-card-content class="tourn-content">
+								<ion-row>
+									<ion-col size="10">
+										<h3>Saurashtra Cricket Association</h3>
+										<b>Date: From 25-Aug-2020 To 15-Sep-2020</b>
+										<br />
+										<b>Amritsar</b>
+									</ion-col>
+									<ion-col size="2" align="center">
+										<img src="../../assets/images/follow-icon.png" class="follow-icon" />
+									</ion-col>
+								</ion-row>
+							</ion-card-content>
+						</ion-card>
+					</div>
+				</ion-col>
+			</ion-row>
+		</ion-slide>
+		<ion-slide>
+			<h1>Slide 3</h1>
+		</ion-slide>
+		<ion-slide>
+			<h1>Slide 4</h1>
+		</ion-slide>
+		<ion-slide>
+			<h1>Slide 5</h1>
+		</ion-slide>
+		<ion-slide>
+			<h1>Slide 6</h1>
+		</ion-slide>
+		<ion-slide>
+			<h1>Slide 7</h1>
+		</ion-slide>
+		<ion-slide>
+			<h1>Slide 8</h1>
+		</ion-slide>
+	</ion-slides>
+</ion-content>
+<app-tabs-menu></app-tabs-menu>

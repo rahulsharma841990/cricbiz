@@ -1,0 +1,156 @@
+.tournament-cards {
+    width: 100%;
+    position: relative;
+    margin-top: 25px;
+    position: relative;
+    ion-card {
+        height: 235px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+}
+
+.tournament-cards-row {
+    margin-top: 28px;
+    .register-tournament {
+        padding-left: 11px;
+    }
+}
+
+.tourn-banner {
+    height: 207px;
+    position: absolute;
+    overflow: hidden;
+    img {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 67%, 0 67%);
+    }
+}
+
+.tourn-content {
+    margin-top: 140px;
+    padding-left: 4px;
+    padding-top: 6px;
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: rgba(157, 50, 46, 1);
+    }
+}
+
+.follow-icon {
+    max-width: 35px;
+}
+
+.on-going-icon {
+    position: absolute;
+    z-index: 9;
+    width: 118px;
+    right: 0px;
+    top: 65px;
+}
+
+.segments-row {
+    background-color: #fff;
+    box-shadow: -1px 1px 9px 0px #ccc;
+}
+
+.segments-tabs {
+    ion-segment-button {
+        --indicator-height: 100px !important;
+        --indicator-color: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
+        --color-checked: #fff;
+        --margin-top: 0px;
+        --margin-bottom: 0px;
+        --padding-bottom: 0px;
+        --padding-top: 0px;
+        ion-label {
+            text-transform: none;
+        }
+    }
+}
+
+.screens {
+    display: block !important;
+    text-align: left;
+}
+
+.no-teams {
+    margin-top: 100px;
+    p {
+        width: 85%;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+}
+
+.dummy-text {
+    margin-top: 150px;
+}
+
+ion-slides {
+    height: 100%;
+}
+
+.highlights-card {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    .card-content {
+        padding: 0px;
+        ion-button {
+            margin: 0px;
+        }
+    }
+}
+.players {
+    width: 90%;
+    border-radius: 6px;
+    padding: 1rem 0;
+    margin: 0rem auto;
+    padding-top: 0px !important;
+    .player {
+        padding: 0.75rem 1rem;
+        &-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        &-details {
+            h2 {
+                font-weight: 500;
+            }
+        }
+
+        .teamde {
+            width: 12px;
+            fill: var(--ion-color-primary);
+        }
+    }
+}
+
+.info-text {
+    font-size: 14px;
+    color: #7a7a7a;
+    margin-top: 10px;
+}
+
+.divider {
+    background-color: #cccc;
+}
+
+.scan-qr-button {
+    margin-top: 15px;
+}
+
+.selected-team {
+    border: 2px solid red;
+}
+
+.footer-button {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}

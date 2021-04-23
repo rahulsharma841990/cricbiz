@@ -1,0 +1,23 @@
+<ion-row>
+	<ion-col>
+		<ion-icon name="camera-reverse-outline" class="camera-icon" (click)="toggleCamera()"></ion-icon>
+	</ion-col>
+	<ion-col align="right">
+		<ion-icon name="flash-off-outline" *ngIf="isFlashOn == false" class="flash-icon" (click)="toggleFlash()">
+		</ion-icon>
+		<ion-icon name="flash-outline" *ngIf="isFlashOn == true" class="flash-icon" (click)="toggleFlash()"></ion-icon>
+	</ion-col>
+</ion-row>
+<div class="ocrloader scanner-gif">
+	<em></em>
+	<div>
+
+	</div>
+	<span></span>
+</div>
+
+<ion-row class="go-back-button">
+	<ion-col align="center">
+		<ion-button fill="outline" (click)="goBack()">Cancel</ion-button>
+	</ion-col>
+</ion-row>

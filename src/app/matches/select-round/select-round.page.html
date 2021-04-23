@@ -1,0 +1,25 @@
+<app-form-headers [title]="'Select Round'"></app-form-headers>
+
+<ion-content class="gray-bg">
+	<ion-row class="no-teams" *ngIf="selectedRounds.length == 0">
+		<ion-col size="12" align="center">
+			<p>Select the rounds for the all the mathes first.</p>
+		</ion-col>
+		<ion-col align="center">
+			<ion-button class="primary-button-no-bg" shape="round" (click)="selectRounds()">Add Round
+			</ion-button>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ng-container *ngFor="let round of selectedRounds">
+			<ion-col size="5" class="round-box" [ngClass]="{'active-round':round.id == activeRound}"
+				(click)="setActiveRound(round)">
+				{{ round?.round.name }}
+			</ion-col>
+		</ng-container>
+	</ion-row>
+</ion-content>
+
+<ion-footer class="primary-button footer-button" (click)="selectMatchTeams()">
+	Next
+</ion-footer>

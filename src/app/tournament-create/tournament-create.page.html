@@ -1,0 +1,145 @@
+<app-form-headers [title]="'Add a Tournament/Series'"></app-form-headers>
+<ion-content class="gray-bg ion-padding">
+	<ion-card class="image-uploader">
+		<ion-card-content>
+			<img [src]="bannerImage" class="banner-image" *ngIf="isBannerInserted == true" (click)="removeBanner()" />
+			<div class="upload-image" (click)="insertLogo('banner')" *ngIf="isBannerInserted == false">
+				<img src="../../../assets/images/image-placeholder.png" class="placeholder-image" />
+				<img src="../../../assets/images/camera.png" class="camera-image" />
+				<p>Add Tournament Banner</p>
+			</div>
+		</ion-card-content>
+	</ion-card>
+	<ion-row>
+		<ion-col size="12">
+			<div class="tournament-logos">
+				<div class="banner-logos" *ngFor="let logo of logoImages; let i = index" (click)="deleteLogo(i)">
+					<img [src]="logo['image']" class="logo-image" />
+					<span>{{ logo['caption'] }}</span>
+				</div>
+				<div class="banner-logos" (click)="insertLogo('logo')" *ngIf="logoImages.length < 1">
+					<img src="../../../assets/images/100.png" class="logo-image" />
+					<img src="../../../assets/images/camera.png" class="camera-image" />
+					<span>Add Logo</span>
+				</div>
+			</div>
+		</ion-col>
+	</ion-row>
+
+	<ion-card class="inputs-card">
+		<ion-card-content>
+			<ion-item lines="none">
+				<ion-input placeholder="Tournament Name *" [(ngModel)]="formData['name']"></ion-input>
+				<img src="../../../assets/images/trophy.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item lines="none" (click)="selectCity()">
+				<ion-input placeholder="City Name *" [(ngModel)]="formData['cityName']" readonly></ion-input>
+				<img src="../../../assets/images/company.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item lines="none">
+				<!-- <ion-input placeholder="Ground *" [(ngModel)]="formData['ground']"></ion-input> -->
+				<tag-input [(ngModel)]="formData['ground']" ngDefaultControl placeholder="Ground *"
+					[inputClass]="tagInput" secondaryPlaceholder="Ground *">
+				</tag-input>
+				<img src="../../../assets/images/ground.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item lines="none">
+				<ion-input placeholder="Orgnizer Name *" [(ngModel)]="formData['orgnizerName']"></ion-input>
+				<img src="../../../assets/images/organization.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item lines="none">
+				<ion-input placeholder="Orgnizer Number *" [(ngModel)]="formData['orgnizerNumber']"></ion-input>
+				<img src="../../../assets/images/org_number.png" slot="start" class="input-icon" />
+			</ion-item>
+			<ion-item class="no-border" lines="none">
+				<ion-label text-wrap class="allow-whatsapp">Allow player to contact me on WhatsAPP for Team
+					Registeration</ion-label>
+				<ion-checkbox slot="start" [(ngModel)]="formData['AllowContactOnWhatsapp']"></ion-checkbox>
+			</ion-item>
+			<ion-row>
+				<ion-col size="6">
+					<ion-item lines="none">
+						<ion-datetime displayFormat="DD MMMM YYYY" value="" placeholder="Start Date *"
+							[(ngModel)]="formData['startDate']"></ion-datetime>
+						<img src="../../../assets/images/calendar.png" slot="start" class="input-icon" />
+					</ion-item>
+				</ion-col>
+				<ion-col size="6">
+					<ion-item lines="none">
+						<ion-datetime displayFormat="DD MMMM YYYY" value="" placeholder="End Date *"
+							[(ngModel)]="formData['endDate']"></ion-datetime>
+						<img src="../../../assets/images/calendar.png" slot="start" class="input-icon" />
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row class="category">
+				<ion-col size="12">
+					<h2>Tournament Category</h2>
+					<ion-chip *ngFor="let category of categories"
+						[ngClass]="{active: formData['tournament_categor_id'] == category.tournament_categor_id}"
+						(click)="setCategory(category)">
+						<ion-label>{{ category.name }}</ion-label>
+					</ion-chip>
+				</ion-col>
+			</ion-row>
+			<ion-row class="ball-types">
+				<ion-col size="12">
+					<h2>Select Ball Type</h2>
+					<div class="balls">
+						<div class="ball" [ngClass]="{active: formData['ballType'] == 1}">
+							<img src="../../../assets/images/tennis.png" (click)="selectBal(1)" />
+							<p>Tennis</p>
+						</div>
+						<div class="ball" [ngClass]="{active: formData['ballType'] == 2}">
+							<img src="../../../assets/images/leather.png" (click)="selectBal(2)" />
+							<p>Leather</p>
+						</div>
+						<div class="ball" [ngClass]="{active: formData['ballType'] == 3}">
+							<img src="../../../assets/images/other.png" (click)="selectBal(3)" />
+							<p>Other</p>
+						</div>
+					</div>
+				</ion-col>
+			</ion-row>
+			<ion-radio-group [(ngModel)]="formData['numberOfOvers']">
+				<ion-row class="match_types">
+					<ion-col size="6">
+						<ion-item class="no-border" lines="none">
+							<ion-label text-wrap>Limited Overs</ion-label>
+							<ion-radio slot="start" value="1" color="danger">
+							</ion-radio>
+						</ion-item>
+					</ion-col>
+					<ion-col size="6">
+						<ion-item class="no-border" lines="none">
+							<ion-label text-wrap>Test Match</ion-label>
+							<ion-radio slot="start" value="2" color="danger">
+							</ion-radio>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<ion-item class="no-border">
+							<ion-label position="floating">Addtags (maximum 5 tags)</ion-label>
+							<ion-input [(ngModel)]="formData['tags']"></ion-input>
+						</ion-item>
+						<small>Reference site about Lorem Ipsum, giving information on its origins, as well
+							as a random Lipsum generator.</small>
+						<ion-item lines="none" class="more-details">
+							<ion-textarea placeholder="Add more details like prizes, awards, entry fees, rule, etc."
+								rows="5" [(ngModel)]="formData['moreDetails']"></ion-textarea>
+						</ion-item>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<ion-button class="primary-button next-button" expand="block" (click)="saveTournament()">NEXT
+						</ion-button>
+					</ion-col>
+				</ion-row>
+			</ion-radio-group>
+		</ion-card-content>
+	</ion-card>
+</ion-content>
+<app-tabs-menu></app-tabs-menu>

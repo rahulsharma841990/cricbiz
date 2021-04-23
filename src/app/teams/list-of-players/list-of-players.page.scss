@@ -1,0 +1,57 @@
+.players {
+    width: 90%;
+    border-radius: 6px;
+    padding: 1rem 0;
+    margin: 0rem auto;
+
+    .player {
+        &-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        &-details {
+            h2 {
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.btn-icon {
+    margin-right: 10px;
+}
+.phonember {
+    border-radius: 30px;
+    background-color: var(--ion-color-primary-contrast);
+
+    .phonenmb {
+        border: none;
+        outline: 0;
+        flex: 1 1 65%;
+        height: 30px;
+    }
+}
+.btnnew {
+    font-size: 80%;
+}
+
+.row-divider {
+    background: #000;
+    margin-top: 14px;
+}
+
+.hideScreen {
+    display: none;
+}
+
+.searchModal {
+    .modal-wrapper {
+        --width: 80%;
+        --height: 80%;
+    }
+}
+
+.add_player {
+    height: 50px;
+}

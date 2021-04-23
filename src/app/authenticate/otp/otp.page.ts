@@ -1,5 +1,5 @@
 import { NavController } from '@ionic/angular';
-import { UtilsService } from 'src/app/utils.service';
+import { UtilsService } from 'src/app/services/utils.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

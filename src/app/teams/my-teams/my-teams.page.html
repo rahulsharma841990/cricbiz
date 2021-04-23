@@ -1,0 +1,86 @@
+<app-form-headers [title]="'Select Team\'s'"></app-form-headers>
+
+<ion-content class="gray-bg">
+	<div class="players">
+		<ion-row>
+			<ion-col size="4">
+				<button [ngClass]="{'btn-primary-rounded': type == 'my_teams','btn-light-rounded': type != 'my_teams'}"
+					class="btn" (click)="ShowContentOf('my_teams')">My Teams</button>
+			</ion-col>
+			<ion-col size="4">
+				<button [ngClass]="{'btn-primary-rounded': type == 'search','btn-light-rounded': type != 'search'}"
+					class="btn" (click)="ShowContentOf('search')">Search</button>
+			</ion-col>
+			<ion-col size="4">
+				<button [ngClass]="{'btn-primary-rounded': type == 'add','btn-light-rounded': type != 'add'}"
+					class="btn" (click)="ShowContentOf('add')">Add</button>
+			</ion-col>
+		</ion-row>
+		<div *ngIf="type == 'my_teams'">
+			<ion-row>
+				<ion-col size="12">
+					<ion-searchbar class="searchbox-bordered"></ion-searchbar>
+				</ion-col>
+			</ion-row>
+			<ion-card class="highlights-card"
+				[ngClass]="{'selected-team': selectedTeamDetails[team.team_id] != undefined && selectedTeamDetails[team.team_id] != ''}"
+				*ngFor="let team of teams" (click)="selectedTeam(team)">
+				<ion-card-content class="card-content">
+					<div class="d-flex gap-1 ion-align-items-center player">
+						<img src="assets/images/avatar.png" class="player-photo" />
+						<div class="player-details">
+							<h2>{{ team.name }}</h2>
+							<div>
+								<img src="assets/icon/trophy.svg" class="teamde" /> Steave
+								Vrasa-Caption
+							</div>
+							<div>
+								<img src="assets/icon/location.svg" class="teamde" /> Ahmedabas
+							</div>
+						</div>
+					</div>
+					<ion-button expand="full" class="mt-1" (click)="viewTeam(team)">View Team</ion-button>
+				</ion-card-content>
+			</ion-card>
+		</div>
+		<div *ngIf="type == 'search'">
+			<ion-row>
+				<ion-col size="12" align="center">
+					<p class="info-text">First, try searching the team from cricbiz network. If you do not find it, you
+						can add it from
+						there. Team name has to be unique.</p>
+				</ion-col>
+				<ion-col size="12">
+					<ion-searchbar class="searchbox-bordered" placeholder="Search by team name"></ion-searchbar>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12">
+					<hr class="divider" />
+				</ion-col>
+			</ion-row>
+			<ion-row class="team-qr">
+				<ion-col align="center">
+					<p class="info-text">Do you have team 's QR code? If yes, try following.</p>
+					<ion-button class="scan-qr-button" fill="outline" (click)="scanQr()">
+						<ion-icon slot="start" name="qr-code"></ion-icon>
+						scan a code
+					</ion-button>
+				</ion-col>
+			</ion-row>
+		</div>
+		<div *ngIf="type == 'add'">
+			<app-create-team></app-create-team>
+		</div>
+	</div>
+
+</ion-content>
+<ion-footer *ngIf="(selectedTeamDetails | json) != '{}' && pageType == 'match'" class="primary-button footer-button"
+	(click)="selectSquard()">
+	Done
+</ion-footer>
+
+<ion-footer *ngIf="(selectedTeamDetails | json) != '{}' && pageType == 'tournament'"
+	class="primary-button footer-button" (click)="selectTeamForTournament()">
+	Done
+</ion-footer>

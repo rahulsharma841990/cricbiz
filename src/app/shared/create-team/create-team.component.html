@@ -1,0 +1,38 @@
+<ion-row>
+	<ion-col>
+		<ion-card class="highlights-card">
+			<ion-card-content class="ion-padding">
+				<ion-row class="highlight-calander ion-justify-content-center">
+					<ion-col size="4" align="center" class="">
+						<div class="team-photo-upload gray-bg ion-justify-content-center ion-align-items-center d-flex"
+							(click)="insertLogo()">
+							<ion-icon name="camera-outline" *ngIf="isImageSelected == false"></ion-icon>
+							<img [src]="selectedImage" *ngIf="isImageSelected == true" />
+							<div class="edit-image" *ngIf="isImageSelected == true">Edit</div>
+						</div>
+					</ion-col>
+				</ion-row>
+				<ion-row class="highlight-title my-3 custom-forms">
+					<ion-item lines="none">
+						<img src="assets/images/trophy.png" slot="start" class="input-icon" />
+						<ion-input placeholder="Team Name *" [(ngModel)]="formData['name']"></ion-input>
+					</ion-item>
+
+					<ion-item lines="none">
+						<img src="assets/images/company.png" slot="start" class="input-icon" />
+						<ion-input placeholder="City Town *" [(ngModel)]="formData['city_name']" (click)="openSearch()"
+							readonly></ion-input>
+					</ion-item>
+				</ion-row>
+
+				<ion-row>
+					<ion-col>
+						<ion-button class="primary-button next-button" (click)="saveTeam()"
+							[disabled]="isButtonDisabled" expand="block">ADD TEAMS
+						</ion-button>
+					</ion-col>
+				</ion-row>
+			</ion-card-content>
+		</ion-card>
+	</ion-col>
+</ion-row>

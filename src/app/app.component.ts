@@ -17,8 +17,12 @@ export class AppComponent {
 	public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 	constructor(public navCtrl: NavController, public menuCtrl: MenuController) { }
 
-	goTo(route) {
+	goTo(route, type = 'forward') {
 		this.menuCtrl.close();
-		this.navCtrl.navigateForward(route, { animationDirection: 'forward' });
+		if (type == 'forward') {
+			this.navCtrl.navigateForward(route, { animationDirection: 'forward' });
+		} else {
+			this.navCtrl.navigateRoot(route, { animationDirection: 'forward' });
+		}
 	}
 }

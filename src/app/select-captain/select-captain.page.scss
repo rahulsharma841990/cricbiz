@@ -1,0 +1,36 @@
+.players {
+	width: 90%;
+	border-radius: 6px;
+	padding: 1rem 0;
+	margin: 0rem auto;
+
+	.player {
+		&-photo {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+		}
+		&-details {
+			h2 {
+				font-weight: 500;
+			}
+		}
+	}
+}
+.btn-light-rounded,
+.btn-primary-rounded {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+}
+
+.captain-tabs {
+	button {
+		font-size: 13px;
+	}
+}
+
+.selected-player {
+	border: 2px solid red;
+}

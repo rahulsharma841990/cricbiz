@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "570417850917",
+    "firebase_url": "https://cric-biz.firebaseio.com",
+    "project_id": "cric-biz",
+    "storage_bucket": "cric-biz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570417850917:android:bb260089df00e3435e6dcc",
+        "android_client_info": {
+          "package_name": "com.cricbiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570417850917-9pgle6l9mero87v6prbqrrjpsahusdqj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cricbiz",
+            "certificate_hash": "2778fe0efa678ada5b36309c5a82cb2ba6ea07b4"
+          }
+        },
+        {
+          "client_id": "570417850917-l62auvdrs3nkemf2im8nmn2svt81u9fh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cricbiz",
+            "certificate_hash": "23f605750e6badbdc12d1ad3bc942e7cb40969b7"
+          }
+        },
+        {
+          "client_id": "570417850917-6fbb81mtpums3nh8tduv37ga35ek3g5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-W0FF58yIRoFhbFg7s7vecNV64t-Z4zs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570417850917-6fbb81mtpums3nh8tduv37ga35ek3g5k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "570417850917-0eh1t7nm4slm4l2h7hfa259mbtt62en1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cricbizz.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

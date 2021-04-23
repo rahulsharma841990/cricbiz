@@ -1,4 +1,4 @@
-import { UtilsService } from './../../utils.service';
+import { UtilsService } from './../../services/utils.service';
 import { Component, OnInit } from '@angular/core';
 import { Platform, NavController } from '@ionic/angular';
 

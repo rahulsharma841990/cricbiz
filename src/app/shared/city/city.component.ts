@@ -1,6 +1,6 @@
 import { ModalController } from '@ionic/angular';
-import { ApiService } from './../../api.service';
-import { UtilsService } from './../../utils.service';
+import { ApiService } from './../../services/api.service';
+import { UtilsService } from './../../services/utils.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

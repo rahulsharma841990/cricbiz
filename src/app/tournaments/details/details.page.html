@@ -1,0 +1,111 @@
+<app-form-headers [title]="'About Tournament'"></app-form-headers>
+<ion-content class="gray-bg">
+	<ion-row>
+		<ion-col>
+			<div class="tournament-cards">
+				<img src="../../assets/images/ongoing.png" class="on-going-icon" />
+				<ion-card>
+					<div class="tourn-banner">
+						<img src="{{ tournamentDetails?.banner_image }}" />
+					</div>
+					<ion-card-content class="tourn-content">
+						<ion-row>
+							<ion-col size="10">
+								<h3>{{ tournamentDetails?.name }}</h3>
+								<b>Date: From {{ tournamentDetails?.start_date }} To {{ tournamentDetails?.end_date
+									}}</b>
+								<br />
+								<b>{{ tournamentDetails?.city?.name }}</b>
+							</ion-col>
+							<ion-col size="2" align="center">
+								<img src="../../assets/images/follow-icon.png" class="follow-icon" />
+							</ion-col>
+						</ion-row>
+					</ion-card-content>
+				</ion-card>
+			</div>
+		</ion-col>
+	</ion-row>
+	<ion-row class="segments-row">
+		<ion-col class="ion-no-padding">
+			<ion-segment scrollable [value]="selectedTab" class="segments-tabs" (ionChange)="changeScreen($event)">
+				<ion-segment-button value="about" id="about">
+					<ion-label>About</ion-label>
+				</ion-segment-button>
+				<ion-segment-button value="matches" id="matches">
+					<ion-label>Matches</ion-label>
+				</ion-segment-button>
+				<ion-segment-button value="sponsors" id="sponsors">
+					<ion-label>Sponsors</ion-label>
+				</ion-segment-button>
+				<ion-segment-button value="teams" id="teams">
+					<ion-label>Teams</ion-label>
+				</ion-segment-button>
+				<ion-segment-button value="point_table" id="point_table">
+					<ion-label>Points Table</ion-label>
+				</ion-segment-button>
+			</ion-segment>
+		</ion-col>
+	</ion-row>
+
+	<ion-slides pager="false" [options]="slideOpts" #SwipedTabsSlider (ionSlideDidChange)="changeSlide($event)">
+		<ion-slide class="screens">
+			<h1 class="dummy-text">About us screen</h1>
+		</ion-slide>
+		<ion-slide>
+			<ion-row class="no-teams" *ngIf="tournamentTeams.length == 0">
+				<ion-col size="12" align="center">
+					<p>You can create a schedule in advance or start scoring matches directly from here.</p>
+				</ion-col>
+				<ion-col align="center">
+					<ion-button class="primary-button-no-bg" shape="round" (click)="selecRound()">Add Schedule/Start
+						Match
+					</ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-slide>
+		<ion-slide>
+			<h1 class="dummy-text">sponsors</h1>
+		</ion-slide>
+		<ion-slide class="screens">
+			<ion-row class="no-teams" *ngIf="tournamentTeams.length == 0">
+				<ion-col size="12" align="center">
+					<p>No teams are added in the tournament yet. Please go ahead and start adding.</p>
+				</ion-col>
+				<ion-col align="center">
+					<ion-button class="primary-button-no-bg" shape="round" (click)="addTeams()">Add Team</ion-button>
+				</ion-col>
+			</ion-row>
+			<ion-row *ngIf="tournamentTeams.length != 0">
+				<ion-col size="12" align="right">
+					<ion-button (click)="addTeams()">
+						<ion-icon name="add"></ion-icon>
+					</ion-button>
+				</ion-col>
+				<ion-col class="players">
+					<ion-card class="highlights-card" *ngFor="let team of tournamentTeams">
+						<ion-card-content class="card-content">
+							<div class="d-flex gap-1 ion-align-items-center player">
+								<img src="assets/images/avatar.png" class="player-photo" />
+								<div class="player-details">
+									<h2>{{ team?.team?.name }}</h2>
+									<div>
+										<img src="assets/icon/trophy.svg" class="teamde" /> Steave
+										Vrasa-Caption
+									</div>
+									<div>
+										<img src="assets/icon/location.svg" class="teamde" /> Ahmedabas
+									</div>
+								</div>
+							</div>
+							<ion-button expand="full" class="mt-1" (click)="removeTeam(team)">Remove</ion-button>
+						</ion-card-content>
+					</ion-card>
+				</ion-col>
+			</ion-row>
+		</ion-slide>
+		<ion-slide>
+			<h1 class="dummy-text">points table</h1>
+		</ion-slide>
+	</ion-slides>
+</ion-content>

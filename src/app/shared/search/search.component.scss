@@ -1,0 +1,9 @@
+.spinner-container {
+    position: absolute;
+    z-index: 999;
+    right: 49px;
+    top: 14px;
+    ion-spinner {
+        width: 12px;
+    }
+}

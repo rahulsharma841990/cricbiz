@@ -1,0 +1,28 @@
+.no-teams {
+    margin-top: 100px;
+    p {
+        width: 85%;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+}
+
+.round-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #cccc;
+    margin: 10px;
+}
+
+.active-round {
+    border: 3px solid rgba(157, 50, 46, 1);
+}
+
+.footer-button {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}

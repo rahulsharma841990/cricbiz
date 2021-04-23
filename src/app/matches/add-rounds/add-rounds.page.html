@@ -1,0 +1,34 @@
+<app-form-headers [title]="'Rounds'"></app-form-headers>
+
+<ion-content class="gray-bg">
+	<ion-row>
+		<ion-col>
+			<ion-item>
+				<ion-label>Round Robin (League Matches)</ion-label>
+				<ion-select multiple="true" cancelText="Cancel" okText="Okay!" [(ngModel)]="selectedRounds">
+					<ng-container *ngFor="let round of roundsList">
+						<ion-select-option value="{{ round?.id }}" *ngIf="round?.type == 'round_robin'">{{ round?.name
+							}}</ion-select-option>
+					</ng-container>
+				</ion-select>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+			<ion-item>
+				<ion-label>Knock Out</ion-label>
+				<ion-select multiple="true" cancelText="Cancel" okText="Okay!" [(ngModel)]="selectedRounds">
+					<ng-container *ngFor="let round of roundsList">
+						<ion-select-option value="{{ round?.id }}" *ngIf="round?.type == 'knock_out'">{{ round?.name }}
+						</ion-select-option>
+					</ng-container>
+				</ion-select>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+</ion-content>
+
+<ion-footer class="primary-button footer-button" (click)="saveSelectedRounds()">
+	Done
+</ion-footer>

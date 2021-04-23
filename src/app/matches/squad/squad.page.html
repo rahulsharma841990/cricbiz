@@ -1,0 +1,26 @@
+<app-form-headers [title]="'Squad'" [ngClass]="{hideScreen: showQr == true}"></app-form-headers>
+
+<ion-content class="gray-bg">
+	<div class="players" *ngIf="teamPlayers.length != 0">
+		<ion-row>
+			<ion-col size="12">
+				<ion-searchbar class="searchbox-bordered" [(ngModel)]="term">
+				</ion-searchbar>
+			</ion-col>
+		</ion-row>
+		<ion-card class="highlights-card" [ngClass]="{'selected-player':selectedPlayers.includes(player.player_id)}"
+			*ngFor="let player of teamPlayers | filter:term" (click)="selectPlayer(player)">
+			<ion-card-content class="card-content">
+				<div class="d-flex gap-1 ion-align-items-center player">
+					<img src="assets/images/avatar.png" class="player-photo" />
+					<div class="player-details">
+						<h2>{{ player?.player_profile.name }}</h2>
+					</div>
+				</div>
+			</ion-card-content>
+		</ion-card>
+	</div>
+</ion-content>
+<ion-footer align="center" class="gray-bg">
+	<ion-button class="primary-btn" expand="block" (click)="next()">Next</ion-button>
+</ion-footer>

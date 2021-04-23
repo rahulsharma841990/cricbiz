@@ -1,0 +1,115 @@
+.segments-container {
+    width: 100%;
+    overflow: scroll;
+    display: grid;
+    .tournament-tabs {
+        margin-top: 20px;
+        ion-segment-button {
+            --background-checked: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
+            --border-radius: 100px;
+            --border-width: 0px;
+            --color-checked: #fff;
+            --padding-end: 20px;
+            --indicator-height: 0px;
+        }
+    }
+}
+
+.tag-input-container {
+    width: 50%;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    margin: 2em 0;
+}
+
+.tournament-cards {
+    width: 100%;
+    position: relative;
+    margin-top: 25px;
+    position: relative;
+    ion-card {
+        height: 235px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+}
+
+.on-going-icon {
+    position: absolute;
+    z-index: 9;
+    width: 118px;
+    right: 0px;
+    top: 65px;
+}
+
+.register-tournament {
+    width: 100%;
+}
+
+.screens {
+    display: block !important;
+    text-align: left;
+}
+
+.tournament-cards-row {
+    margin-top: 28px;
+    .register-tournament {
+        padding-left: 11px;
+    }
+}
+
+.btn-rounded {
+    --background: rgb(213, 31, 1);
+    --background: linear-gradient(180deg, rgba(213, 31, 1, 1) 14%, rgba(157, 50, 46, 1) 75%);
+    text-transform: none;
+    height: 39px;
+    font-weight: 600;
+    color: #fff;
+    --border-radius: 100px;
+    position: absolute;
+    right: -18px;
+    top: -11px;
+    width: 134px;
+    --padding-start: none;
+}
+
+.button-inner {
+    margin-right: auto;
+    margin-left: 22px;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.tourn-banner {
+    height: 207px;
+    position: absolute;
+    overflow: hidden;
+    img {
+        flex: 1;
+        height: 100%;
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0, 100% 67%, 0 67%);
+    }
+}
+
+.tourn-content {
+    margin-top: 140px;
+    padding-left: 4px;
+    padding-top: 6px;
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: rgba(157, 50, 46, 1);
+    }
+}
+
+.follow-icon {
+    max-width: 35px;
+}
+
+ion-slides {
+    height: 100%;
+}

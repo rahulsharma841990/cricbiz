@@ -1,0 +1,31 @@
+.team-photo-upload {
+    padding: 0.5rem;
+    height: 99px;
+    width: 99px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+
+    ion-icon {
+        font-size: 50px;
+        color: var(--primary-color);
+    }
+    img {
+        max-width: 150px;
+        float: left;
+    }
+
+    .edit-image {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 25px;
+        text-align: center;
+        float: left;
+        position: absolute;
+        bottom: 0px;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 12px;
+        padding-top: 4px;
+    }
+}

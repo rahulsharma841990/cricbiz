@@ -1,0 +1,20 @@
+hr {
+    background-color: #ccc;
+    margin-top: 17px;
+    margin-bottom: 13px;
+}
+
+.user-image {
+    border-radius: 100px;
+}
+
+.digit-input {
+    width: 60%;
+    margin: 0 auto;
+    ion-label {
+        margin: 0 auto;
+    }
+    ion-input {
+        text-align: center;
+    }
+}

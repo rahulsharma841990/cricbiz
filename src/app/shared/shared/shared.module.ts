@@ -1,3 +1,6 @@
+import { OutHowComponent } from './../../matches/out-how/out-how.component';
+import { PlayerSelectionComponent } from './../../matches/player-selection/player-selection.component';
+import { CreateMatchOfficialComponent } from './../../matches/create-match-official/create-match-official.component';
 import { CreateTeamComponent } from './../create-team/create-team.component';
 import { FormsModule } from '@angular/forms';
 import { ConfirmRequestedUserComponent } from './../confirm-requested-user/confirm-requested-user.component';
@@ -23,7 +26,10 @@ import { QrScannerComponent } from '../qr-scanner/qr-scanner.component';
     SearchComponent,
     QrScannerComponent,
     ConfirmRequestedUserComponent,
-    CreateTeamComponent
+    CreateMatchOfficialComponent,
+    CreateTeamComponent,
+    PlayerSelectionComponent,
+    OutHowComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +45,9 @@ import { QrScannerComponent } from '../qr-scanner/qr-scanner.component';
     SearchComponent,
     QrScannerComponent,
     ConfirmRequestedUserComponent,
-    CreateTeamComponent
+    CreateTeamComponent,
+    PlayerSelectionComponent,
+    OutHowComponent
   ]
 })
 export class SharedModule { }

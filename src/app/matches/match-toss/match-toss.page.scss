@@ -1,0 +1,37 @@
+.teamphoto {
+    width: 80px;
+    height: 80px;
+}
+
+.team-box {
+    border: 1px solid #ccc;
+    width: 77%;
+    margin: 0 auto;
+    height: 161px;
+    padding-top: 15px;
+    background: #fff;
+    h5 {
+        padding-top: 10px;
+    }
+}
+
+.border-selected {
+    border-color: red;
+}
+
+.footer-row {
+    height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    .schedule-match {
+        background-color: #171717cc;
+        padding: 10px;
+    }
+    .next-toss {
+        background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+        padding: 10px;
+    }
+}

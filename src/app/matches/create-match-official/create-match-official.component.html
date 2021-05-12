@@ -1,0 +1,77 @@
+<app-form-headers [title]="'Match Official'" modal="true"></app-form-headers>
+<ion-content class="gray-bg">
+	<ion-row *ngIf="createNew == false">
+		<ion-col size="12">
+			<ion-searchbar animated class="searchbox-bordered" showCancelButton="focus" #input debounce="500"
+				(ionChange)="searchUser($event)">
+				<div *ngIf="searching" class="spinner-container">
+					<ion-spinner></ion-spinner>
+				</div>
+			</ion-searchbar>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+			<ion-list *ngIf="records.length != 0 && createNew == false">
+				<ion-list-header>
+					List of Users
+				</ion-list-header>
+
+				<ion-item *ngFor="let record of records">
+					<ion-avatar slot="start">
+						<img src="../../../assets/images/organization.png">
+					</ion-avatar>
+					<ion-label (click)="selectRecord(record)">
+						<h2>{{ record.name }}</h2>
+						<h2>{{ record.mobile }}</h2>
+					</ion-label>
+				</ion-item>
+			</ion-list>
+		</ion-col>
+		<ion-col align="center" size="12" *ngIf="createNew == false">
+			<ion-item *ngIf="records.length == 0 && showNoRecord">
+				<div class="no-records">
+					<h6>No Records found!</h6>
+					<ion-button class="primary-button-rounded" (click)="addNew()">Add New</ion-button>
+				</div>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+	<ion-row *ngIf="createNew == true">
+		<ion-col size="12">
+			<ion-list class="add-new-fields">
+				<ion-item>
+					<ion-label position="floating">Name</ion-label>
+					<ion-input [(ngModel)]="name"></ion-input>
+				</ion-item>
+				<ion-item lines="none">
+					<ion-label position="floating">Mobile</ion-label>
+					<ion-input [(ngModel)]="mobile" type="tel" maxlength="12"></ion-input>
+				</ion-item>
+			</ion-list>
+		</ion-col>
+		<ion-col size="12" align="center" class="user-image">
+			<img src="../../../assets/images/organization.png" (click)="insertImage()" *ngIf="selectedImage == null" />
+			<img [src]="selectedImage" (click)="insertImage()" *ngIf="selectedImage != null" />
+		</ion-col>
+	</ion-row>
+</ion-content>
+
+<ion-footer *ngIf="records.length != 0 && createNew == false">
+	<ion-row class="footer-row">
+		<ion-col class="next-toss" (click)="addNew()">
+			Add
+		</ion-col>
+	</ion-row>
+</ion-footer>
+
+<ion-footer *ngIf="createNew == true">
+	<ion-row class="footer-row">
+		<ion-col class="schedule-match">
+			Cancel
+		</ion-col>
+		<ion-col class="next-toss" (click)="createUser()">
+			Add
+		</ion-col>
+	</ion-row>
+</ion-footer>

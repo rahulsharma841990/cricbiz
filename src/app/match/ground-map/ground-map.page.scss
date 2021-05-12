@@ -1,0 +1,19 @@
+.ground-image {
+    margin-top: 17%;
+}
+.footer-row {
+    height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    .schedule-match {
+        background-color: #171717cc;
+        padding: 10px;
+    }
+    .next-toss {
+        background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+        padding: 10px;
+    }
+}

@@ -28,6 +28,7 @@
     "@ionic-native/file": "^5.31.1",
     "@ionic-native/firebase-authentication": "^5.31.1",
     "@ionic-native/firebase-x": "^5.31.1",
+    "@ionic-native/native-audio": "^5.32.1",
     "@ionic-native/qr-scanner": "^5.31.1",
     "@ionic/angular": "^5.6.1",
     "cordova-android": "9.0.0",
@@ -49,6 +50,7 @@
     "@ionic/angular-toolkit": "^3.1.1",
     "@types/jasmine": "^3.6.7",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jquery": "^3.5.5",
     "@types/node": "^12.20.6",
     "codelyzer": "^6.0.0",
     "com-badrit-contactpicker": "^0.3.0",
@@ -66,6 +68,7 @@
     "cordova-plugin-firebasex": "^11.0.3",
     "cordova-plugin-ionic-keyboard": "^2.2.0",
     "cordova-plugin-ionic-webview": "^4.2.1",
+    "cordova-plugin-nativeaudio": "^3.0.9",
     "cordova-plugin-qrscanner": "^3.0.1",
     "cordova-plugin-splashscreen": "^5.0.4",
     "cordova-plugin-statusbar": "^2.4.3",
@@ -130,7 +133,8 @@
       "cordova-plugin-contacts": {},
       "com-badrit-contactpicker": {},
       "cordova-plugin-qrscanner": {},
-      "cordova-plugin-datepicker": {}
+      "cordova-plugin-datepicker": {},
+      "cordova-plugin-nativeaudio": {}
     },
     "platforms": [
       "android",

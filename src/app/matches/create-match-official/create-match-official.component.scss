@@ -1,0 +1,41 @@
+.spinner-container {
+    position: absolute;
+    z-index: 999;
+    right: 49px;
+    top: 14px;
+    ion-spinner {
+        width: 12px;
+    }
+}
+
+.no-records {
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.add-new-fields {
+    border-radius: 8px;
+}
+
+.user-image {
+    margin-top: 10px;
+}
+
+.footer-row {
+    height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    .schedule-match {
+        background-color: #171717cc;
+        padding: 10px;
+    }
+    .next-toss {
+        background: linear-gradient(to bottom, #d61e00 0%, #9e322d 89%);
+        padding: 10px;
+    }
+}

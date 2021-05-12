@@ -1,0 +1,17 @@
+<app-form-headers [title]="'Virtual Toss'"></app-form-headers>
+
+<ion-content>
+	<ion-row class="result">
+		<ion-col align="center">
+			<h2 *ngIf="showResult == true">{{ result }}</h2>
+		</ion-col>
+	</ion-row>
+	<div id="coin">
+		<div class="side-a"></div>
+		<div class="side-b"></div>
+	</div>
+</ion-content>
+
+<ion-footer *ngIf="showResult == true" class="primary-button footer-button" (click)="closeToss()">
+	Done
+</ion-footer>

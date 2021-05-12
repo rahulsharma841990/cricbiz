@@ -1,0 +1,116 @@
+<ion-content class="ion-no-padding">
+	<div class="header-row">
+		<ion-row>
+			<ion-col>
+				<ion-icon name="chevron-back" (click)="goBack()"></ion-icon>
+			</ion-col>
+			<ion-col align="center">
+				Cric.biz
+			</ion-col>
+			<ion-col align="right" class="right-icons">
+				<ion-icon name="camera-outline"></ion-icon>
+				<ion-icon name="settings-outline"></ion-icon>
+			</ion-col>
+		</ion-row>
+		<ion-row class="score-details">
+			<ion-col align="center" size="12">
+				<h1>{{ totalScore }}/0<small>({{ numberOfBalls }}/200)</small></h1>
+			</ion-col>
+			<ion-col size="12" align="center">
+				<p>Cric.biz win the toss and elected to bat</p>
+			</ion-col>
+		</ion-row>
+		<ion-row class="striker-box">
+			<ion-col class="single-striker" [ngClass]="{'active-player':activeStriker == 1}">
+				<img src="../../../assets/images/bartsss.png" />
+				<label>{{ strikerOne.name }}</label><br />
+				<span class="player-score">{{ strikerOneScore }}({{ strikerOneOver }})</span>
+			</ion-col>
+			<ion-col class="single-striker" [ngClass]="{'active-player':activeStriker == 2}">
+				<img src="../../../assets/images/bartsss.png" />
+				<label>{{ strikerTwo.name }}</label><br />
+				<span class="player-score">{{ strikerTwoScore }}({{ strikerTwoOver }})</span>
+			</ion-col>
+		</ion-row>
+	</div>
+	<ion-row class="ion-no-padding player-details">
+		<ion-col size="12" class="ion-no-padding">
+			<img src="../../../assets/images/bartsss.png" />
+			<label>{{ bowler.name }}</label>
+			<!-- <img src="../../../assets/images/striker-details.png" /> -->
+		</ion-col>
+		<ion-col size="12" class="ion-no-padding scores-list">
+			<ul>
+				<ng-container *ngFor="let score of scores">
+					<li *ngIf="score.type == 'score'">
+						{{ score.score }}
+						<span>&nbsp;</span>
+					</li>
+					<li *ngIf="score.type == 'Wide'">
+						{{ score.score }}
+						<span>WB</span>
+					</li>
+					<li *ngIf="score.type == 'No'">{{ score.score }}
+						<span>NB</span>
+					</li>
+				</ng-container>
+			</ul>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col size="9" class="ion-no-padding">
+			<ion-row class="white-buttons">
+				<ion-col size="4" class="ion-no-padding" (click)="setScore(0)">
+					<ion-label>0</ion-label>
+				</ion-col>
+				<ion-col size="4" class="ion-no-padding" (click)="setScore(1)">
+					<ion-label>1</ion-label>
+				</ion-col>
+				<ion-col size="4" class="ion-no-padding" (click)="setScore(2)">
+					<ion-label>2</ion-label>
+				</ion-col>
+				<ion-col size="4" class="ion-no-padding" (click)="setScore(3)">
+					<ion-label>3</ion-label>
+				</ion-col>
+				<ion-col size="4" class="ion-no-padding" (click)="setScore(4)">
+					<ion-label>4</ion-label><br />
+					<ion-label>FOUR</ion-label>
+				</ion-col>
+				<ion-col size="4" class="ion-no-padding" (click)="setScore(6)">
+					<ion-label>6</ion-label><br />
+					<ion-label>SIX</ion-label>
+				</ion-col>
+			</ion-row>
+		</ion-col>
+		<ion-col size="3" class="right-col ion-no-padding">
+			<ion-row class="out-row">
+				<ion-col size="12" class="undo">
+					<ion-label>UNDO</ion-label>
+				</ion-col>
+				<ion-col size="12" class="five-seven" (click)="manual_score()">
+					<ion-label>5,7</ion-label>
+				</ion-col>
+				<ion-col size="12" class="out-label" (click)="outHow()">
+					<ion-label>OUT</ion-label>
+				</ion-col>
+			</ion-row>
+		</ion-col>
+	</ion-row>
+	<ion-row class="bottom-row">
+		<ion-col size="3" (click)="wide_no_ball('Wide')">
+			<ion-label>WD</ion-label>
+		</ion-col>
+		<ion-col size="3" (click)="wide_no_ball('No')">
+			<ion-label>NB</ion-label>
+		</ion-col>
+		<ion-col size="3">
+			<ion-label>BYE</ion-label>
+		</ion-col>
+		<ion-col size="3">
+			<ion-label>LB</ion-label>
+		</ion-col>
+	</ion-row>
+</ion-content>
+<ion-footer class="quick-action">
+	<ion-label>Quick Action</ion-label>
+</ion-footer>

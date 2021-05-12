@@ -1,0 +1,87 @@
+<app-form-headers [title]="'Match Official'"></app-form-headers>
+
+<ion-content class="gray-bg">
+	<ion-card>
+		<ion-card-header>
+			<ion-row>
+				<ion-col>
+					<h5>Select Umpires</h5>
+				</ion-col>
+			</ion-row>
+		</ion-card-header>
+		<ion-card-content>
+			<ion-row>
+				<ion-col size="4" align="center" class="user-box" (click)="searchUser('Umpire','umpire')">
+					<img src="../../../assets/images/ump.png" />
+					<label *ngIf="umpires[0] != undefined">{{ umpires[0].name }}</label>
+					<label *ngIf="umpires[0] == undefined">Umpire 1</label>
+				</ion-col>
+				<ion-col size="4" align="center" class="user-box" (click)="searchUser('Umpire','umpire')">
+					<img src="../../../assets/images/ump.png" />
+					<label *ngIf="umpires[1] != undefined">{{ umpires[1].name }}</label>
+					<label *ngIf="umpires[1] == undefined">Umpire 2</label>
+				</ion-col>
+				<ion-col size="4" align="center" class="user-box" (click)="searchUser('Umpire','umpire')">
+					<img src="../../../assets/images/ump.png" />
+					<label *ngIf="umpires[2] != undefined">{{ umpires[2].name }}</label>
+					<label *ngIf="umpires[2] == undefined">Umpire 3</label>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
+	</ion-card>
+	<ion-card>
+		<ion-card-header>
+			<ion-row>
+				<ion-col>
+					<h5>Select Scorers</h5>
+				</ion-col>
+			</ion-row>
+		</ion-card-header>
+		<ion-card-content>
+			<ion-row>
+				<ion-col size="4" align="center" class="user-box" (click)="searchUser('Scorer','scorer')">
+					<img src="../../../assets/images/scorer.png" />
+					<label *ngIf="scorers[0] != undefined">{{ scorers[0].name }}</label>
+					<label *ngIf="scorers[0] == undefined">Scorer 1</label>
+				</ion-col>
+				<ion-col size="4" align="center" class="user-box" (click)="searchUser('Scorer','scorer')">
+					<img src="../../../assets/images/scorer.png" />
+					<label *ngIf="scorers[1] != undefined">{{ scorers[1].name }}</label>
+					<label *ngIf="scorers[1] == undefined">Scorer 2</label>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
+	</ion-card>
+	<ion-card>
+		<ion-card-header>
+			<ion-row>
+				<ion-col>
+					<h5>Others</h5>
+				</ion-col>
+			</ion-row>
+		</ion-card-header>
+		<ion-card-content>
+			<ion-row>
+				<ion-col size="4" align="center" class="user-box" (click)="searchUser('Commentators','commentater')">
+					<img src="../../../assets/images/agent.png" />
+					<label *ngIf="commentater == ''">Commentators </label>
+					<label *ngIf="commentater != ''">{{ commentater }} </label>
+				</ion-col>
+				<ion-col size="4" align="center" class="user-box" (click)="searchUser('Referee','match_refree')">
+					<img src="../../../assets/images/refree.png" />
+					<label *ngIf="match_refree == ''">Match Referee </label>
+					<label *ngIf="match_refree != ''">{{ match_refree }} </label>
+				</ion-col>
+				<ion-col size="4" align="center" class="user-box" (click)="searchUser('Streamer','live')">
+					<img src="../../../assets/images/live-stream.png" />
+					<label *ngIf="live == ''">Live Streamers </label>
+					<label *ngIf="live != ''">{{ live }} </label>
+				</ion-col>
+			</ion-row>
+		</ion-card-content>
+	</ion-card>
+</ion-content>
+
+<ion-footer class="primary-button footer-button" (click)="done()">
+	Done
+</ion-footer>

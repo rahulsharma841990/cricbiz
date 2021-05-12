@@ -1,0 +1,40 @@
+<app-form-headers [title]="'Start Innings'"></app-form-headers>
+
+<ion-content class="gray-bg">
+	<ion-row class="ion-align-items-center">
+		<ion-col size="12" class="text-center">
+			<h5>Batting</h5>
+		</ion-col>
+		<ion-col size="6" (click)="selectStriker('Bat',1)" align="center" class="text-center">
+			<div class="team-box" [ngClass]="{'border-selected': selectedElect == 'Bat'}">
+				<img class="border-radius teamphoto" src="assets/images/batsman-ico.png" />
+				<h6>{{ striker_one }}</h6>
+			</div>
+		</ion-col>
+		<ion-col size="6" (click)="selectStriker('Bat',2)" align="center" class="text-center">
+			<div class="team-box" [ngClass]="{'border-selected': selectedElect == 'Bowl'}">
+				<img class="border-radius teamphoto" src="assets/images/batsman-ico.png" />
+				<h6>{{ striker_two }}</h6>
+			</div>
+		</ion-col>
+	</ion-row>
+	<ion-row class="ion-align-items-center">
+		<ion-col size="12" class="text-center">
+			<h5>Bowling</h5>
+		</ion-col>
+		<ion-col size="6" (click)="selectStriker('Bowler')" align="center" class="text-center">
+			<div class="team-box" [ngClass]="{'border-selected': selectedElect == 'Bat'}">
+				<img class="border-radius teamphoto" src="assets/images/bowler-man.png" />
+				<h6>{{ bowler }}</h6>
+			</div>
+		</ion-col>
+	</ion-row>
+</ion-content>
+
+<ion-footer>
+	<ion-row class="footer-row">
+		<ion-col class="next-toss" (click)="startInings()">
+			Start Innings
+		</ion-col>
+	</ion-row>
+</ion-footer>

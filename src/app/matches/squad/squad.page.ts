@@ -56,8 +56,10 @@ export class SquadPage implements OnInit {
 		let data = {
 			team_id: this.teamDetails.team_id,
 			selected_players: this.selectedPlayers,
-			tournament_id: this.tournamentId,
 			team_type: this.teamType
+		}
+		if (this.tournamentId != undefined) {
+			data['tournament_id'] = this.tournamentId
 		}
 		this.navCtrl.pop().then(() => {
 			this.navCtrl.navigateForward(['select-captain', data]);

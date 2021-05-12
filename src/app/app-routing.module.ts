@@ -146,6 +146,30 @@ const routes: Routes = [
   {
     path: 'add-rounds',
     loadChildren: () => import('./matches/add-rounds/add-rounds.module').then( m => m.AddRoundsPageModule)
+  },
+  {
+    path: 'match-official',
+    loadChildren: () => import('./matches/match-official/match-official.module').then( m => m.MatchOfficialPageModule)
+  },
+  {
+    path: 'match-toss',
+    loadChildren: () => import('./matches/match-toss/match-toss.module').then( m => m.MatchTossPageModule)
+  },
+  {
+    path: 'virtual-toss',
+    loadChildren: () => import('./matches/virtual-toss/virtual-toss.module').then( m => m.VirtualTossPageModule)
+  },
+  {
+    path: 'striker',
+    loadChildren: () => import('./matches/striker/striker.module').then( m => m.StrikerPageModule)
+  },
+  {
+    path: 'innings',
+    loadChildren: () => import('./matches/innings/innings.module').then( m => m.InningsPageModule)
+  },
+  {
+    path: 'ground-map',
+    loadChildren: () => import('./match/ground-map/ground-map.module').then( m => m.GroundMapPageModule)
   }
 
 ];

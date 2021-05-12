@@ -1,3 +1,5 @@
+import { ApiService } from './../../services/api.service';
+import { UtilsService } from './../../services/utils.service';
 import { DataService } from './../../services/data.service';
 import { NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
@@ -15,12 +17,28 @@ export class StartaMatchPage implements OnInit {
 	private tournamentId: any;
 	private team_a: any = 'Select Team A';
 	private team_b: any = 'Select Team B';
-	constructor(private navCtrl: NavController, private route: ActivatedRoute, private dataService: DataService, private datePicker: DatePicker) {
+	private selectedBal: any;
+	private over_type: any;
+	private no_of_overs: any;
+	private over_per_bowler: any;
+	private city_town: any;
+	private ground: any;
+	private date_time: any;
+	constructor(
+		private navCtrl: NavController,
+		private route: ActivatedRoute,
+		private dataService: DataService,
+		private datePicker: DatePicker,
+		private utilService: UtilsService,
+		private restService: ApiService
+	) {
 		this.subscriptions['route_subscription'] = this.route.params.subscribe((res) => {
-			this.tournamentId = res.tournament_id;
+			if (res.tournament_id != undefined) {
+				this.tournamentId = res.tournament_id;
+			}
 			this.subscriptions['route_subscription'].unsubscribe();
 		});
-		localStorage.removeItem('match_id');
+		// localStorage.removeItem('match_id');
 	}
 
 	ngOnInit() {
@@ -46,7 +64,7 @@ export class StartaMatchPage implements OnInit {
 				this.team_a = matchDetails['team_a_details']['name'];
 			}
 			if (matchDetails['team_b_details'] != null) {
-				this.team_a = matchDetails['team_b_details']['name'];
+				this.team_b = matchDetails['team_b_details']['name'];
 			}
 			console.log(matchDetails);
 		}
@@ -67,7 +85,11 @@ export class StartaMatchPage implements OnInit {
 				return false;
 			}
 		}
-		this.navCtrl.navigateForward(['my-teams', { type: 'match', tournament_id: this.tournamentId, team_type: teamType }]);
+		let params = { type: 'match', team_type: teamType }
+		if (this.tournamentId != undefined) {
+			params['tournament_id'] = this.tournamentId;
+		}
+		this.navCtrl.navigateForward(['my-teams', params]);
 	}
 
 	// https://stackoverflow.com/questions/48686562/how-to-add-a-datepicker-in-ionic-3
@@ -76,10 +98,55 @@ export class StartaMatchPage implements OnInit {
 			date: new Date(),
 			mode: 'date',
 			androidTheme: this.datePicker.ANDROID_THEMES.THEME_DEVICE_DEFAULT_LIGHT
-		}).then(
-			date => console.log('date: ', date),
-			err => console.log('error ', err)
-		);
+		}).then((date) => {
+			console.log(date);
+		});
 	}
 
+	selectMatchOfficial() {
+		this.navCtrl.navigateForward('match-official');
+	}
+
+	selectBal(bal) {
+		this.selectedBal = bal;
+	}
+
+	saveMatchStartToss() {
+		let matchDetails = JSON.parse(localStorage.getItem('match_id'));
+		let umpire = localStorage.getItem('umpire');
+		let scorer = localStorage.getItem('scorer');
+		let match_refree = localStorage.getItem('match_refree');
+		let live = localStorage.getItem('live');
+		if (umpire == undefined || umpire == null || scorer == undefined ||
+			scorer == null || match_refree == undefined || match_refree == null || live == null) {
+			this.utilService.presentToast('Please select match officials first', 3000);
+			return false;
+		}
+		let matchOfficials = {
+			umpire: JSON.parse(umpire),
+			scorer: JSON.parse(scorer),
+			match_refree: JSON.parse(match_refree),
+			live: JSON.parse(live)
+		}
+		let formData = {
+			selectedBal: this.selectBal,
+			over_type: this.over_type,
+			no_of_overs: this.no_of_overs,
+			over_per_bowler: this.over_per_bowler,
+			city_town: this.city_town,
+			ground: this.ground,
+			date_time: this.date_time,
+			match_officials: matchOfficials
+		}
+		if (Object.values(formData).includes(undefined)) {
+			this.utilService.presentToast('Please fill all details', 3000);
+			return false;
+		}
+		this.utilService.presentLoadingWithOptions().then(() => {
+			this.restService.request('match/update/' + matchDetails.id, 'post', formData).then((res: any) => {
+				this.utilService.loadingController.dismiss();
+				this.navCtrl.navigateForward('match-toss');
+			});
+		});
+	}
 }

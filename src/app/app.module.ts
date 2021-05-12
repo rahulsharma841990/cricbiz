@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import { IonicCustomAlertModule } from 'ionic-custom-alert';
 import { DatePicker } from '@ionic-native/date-picker/ngx';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { DatePicker } from '@ionic-native/date-picker/ngx';
 		DatePicker,
 		Crop,
 		File,
+		NativeAudio,
 		Contacts,
 		QRScanner
 	],

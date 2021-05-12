@@ -24,17 +24,17 @@
 			</ion-row>
 		</ion-card-content>
 	</ion-card>
-	<ion-row>
+	<ion-row *ngIf="team_a != 'Select Team A' && team_b != 'Select Team B'">
 		<ion-col size="12">
-			<ion-radio-group value="biff">
+			<ion-radio-group value="limited" [(ngModel)]="over_type">
 				<ion-item>
 					<ion-label>Limited Overs</ion-label>
-					<ion-radio slot="start" value="biff"></ion-radio>
+					<ion-radio slot="start" value="limited"></ion-radio>
 				</ion-item>
 
 				<ion-item>
 					<ion-label>Test Match</ion-label>
-					<ion-radio slot="start" value="buford"></ion-radio>
+					<ion-radio slot="start" value="test_mathc"></ion-radio>
 				</ion-item>
 			</ion-radio-group>
 		</ion-col>
@@ -42,11 +42,11 @@
 			<ion-list>
 				<ion-item>
 					<ion-label position="floating">No. of overs *</ion-label>
-					<ion-input></ion-input>
+					<ion-input [(ngModel)]="no_of_overs"></ion-input>
 				</ion-item>
 				<ion-item>
 					<ion-label position="floating">Overs Per Bowler *</ion-label>
-					<ion-input></ion-input>
+					<ion-input [(ngModel)]="over_per_bowler"></ion-input>
 				</ion-item>
 				<ion-item class="power-play" lines="none">
 					<h6>Power Play ></h6>
@@ -56,16 +56,66 @@
 		<ion-col size="12">
 			<ion-item>
 				<ion-label position="floating">City/Town*</ion-label>
-				<ion-input></ion-input>
+				<ion-input [(ngModel)]="city_town"></ion-input>
 			</ion-item>
 			<ion-item>
 				<ion-label position="floating">Ground*</ion-label>
-				<ion-input></ion-input>
+				<ion-input [(ngModel)]="ground"></ion-input>
 			</ion-item>
 			<ion-item>
 				<ion-label position="floating">Date & Time*</ion-label>
-				<ion-input (click)="showDatepicker()"></ion-input>
+				<ion-datetime displayFormat="DD-MM-YYYY hh:mm A" [(ngModel)]="date_time" placeholder="Select Date">
+				</ion-datetime>
 			</ion-item>
 		</ion-col>
 	</ion-row>
+	<ion-row class="ball-types" *ngIf="team_a != 'Select Team A' && team_b != 'Select Team B'">
+		<ion-col size="12">
+			<h2>Select Ball Type</h2>
+			<div class="balls">
+				<div class="ball" [ngClass]="{'active':selectedBal == 1 }">
+					<img src="../../../assets/images/tennis.png" (click)="selectBal(1)" />
+					<p>Tennis</p>
+				</div>
+				<div class="ball" [ngClass]="{'active':selectedBal == 2 }">
+					<img src="../../../assets/images/leather.png" (click)="selectBal(2)" />
+					<p>Leather</p>
+				</div>
+				<div class="ball" [ngClass]="{'active':selectedBal == 3 }">
+					<img src="../../../assets/images/other.png" (click)="selectBal(3)" />
+					<p>Other</p>
+				</div>
+			</div>
+		</ion-col>
+	</ion-row>
+	<ion-row class="ball-types" *ngIf="team_a != 'Select Team A' && team_b != 'Select Team B'">
+		<ion-col size="12">
+			<h2>Match officials</h2>
+			<div class="balls">
+				<div class="ball">
+					<img src="../../../assets/images/referee.png" (click)="selectMatchOfficial()" />
+					<p>Umpire</p>
+				</div>
+				<div class="ball">
+					<img src="../../../assets/images/referee.png" (click)="selectMatchOfficial()" />
+					<p>Referee</p>
+				</div>
+				<div class="ball">
+					<img src="../../../assets/images/referee.png" (click)="selectMatchOfficial()" />
+					<p>Comentator</p>
+				</div>
+			</div>
+		</ion-col>
+	</ion-row>
 </ion-content>
+
+<ion-footer *ngIf="team_a != 'Select Team A' && team_b != 'Select Team B'">
+	<ion-row class="footer-row">
+		<ion-col class="schedule-match">
+			Schedule Match
+		</ion-col>
+		<ion-col class="next-toss" (click)="saveMatchStartToss()">
+			Next (TOSS)
+		</ion-col>
+	</ion-row>
+</ion-footer>

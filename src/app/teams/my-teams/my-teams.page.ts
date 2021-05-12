@@ -73,7 +73,11 @@ export class MyTeamsPage implements OnInit {
 
 	selectSquard() {
 		let selectedTeam = Object.values(this.selectedTeamDetails)[0];
-		selectedTeam['tournament_id'] = this.tournamentId;
+		if (this.tournamentId != undefined && this.tournamentId != null) {
+			selectedTeam['tournament_id'] = this.tournamentId;
+		} else {
+			delete selectedTeam['tournament_id'];
+		}
 		selectedTeam['team_type'] = this.teamType;
 		this.navCtrl.pop().then(() => {
 			this.navCtrl.navigateForward(['squad', selectedTeam]);

@@ -7,8 +7,10 @@ import { Observable, Subject } from 'rxjs';
 })
 export class ApiService {
 
-	// private baseUrl = 'https://cricbiz.webcolorz.in/api/';
-	private baseUrl = 'http://192.168.1.109:8000/api/';
+	private baseUrl = 'https://cricbiz.webcolorz.in/api/';
+	// private baseUrl = 'http://192.168.1.109:8000/api/';
+	// private baseUrl = 'http://192.168.1.10:8000/api/';
+	// private baseUrl = 'http://192.168.1.112:8000/api/';
 	// private baseUrl = 'http://localhost:8000/api/';
 	constructor(private http: HttpClient,) { }
 

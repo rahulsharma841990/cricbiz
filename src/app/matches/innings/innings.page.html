@@ -14,7 +14,7 @@
 		</ion-row>
 		<ion-row class="score-details">
 			<ion-col align="center" size="12">
-				<h1>{{ totalScore }}/0<small>({{ numberOfBalls }}/200)</small></h1>
+				<h1>{{ totalScore }}/0<small>({{ numberOfBalls }}/{{ totalBalls }})</small></h1>
 			</ion-col>
 			<ion-col size="12" align="center">
 				<p>Cric.biz win the toss and elected to bat</p>
@@ -84,7 +84,7 @@
 		</ion-col>
 		<ion-col size="3" class="right-col ion-no-padding">
 			<ion-row class="out-row">
-				<ion-col size="12" class="undo">
+				<ion-col size="12" class="undo" (click)="undoStep()">
 					<ion-label>UNDO</ion-label>
 				</ion-col>
 				<ion-col size="12" class="five-seven" (click)="manual_score()">

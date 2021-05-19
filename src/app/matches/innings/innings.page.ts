@@ -1,3 +1,4 @@
+import { DataService } from './../../services/data.service';
 import { OutHowComponent } from './../out-how/out-how.component';
 import { NavController, AlertController, ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
@@ -26,13 +27,20 @@ export class InningsPage implements OnInit {
 	public wideAndNoBallTotal: any = 1;
 	public wideBallsArray: any = [];
 	public noBallsArray: any = [];
-	constructor(public navCtrl: NavController, public alertController: AlertController, public modalController: ModalController) {
+	public totalBalls: any = 0;
+	constructor(
+		public navCtrl: NavController,
+		public alertController: AlertController,
+		public modalController: ModalController,
+		public dataService: DataService
+	) {
 		this.strikerOne = JSON.parse(localStorage.getItem('striker_one'));
 		this.strikerTwo = JSON.parse(localStorage.getItem('striker_two'));
 		this.bowler = JSON.parse(localStorage.getItem('bowler'));
 	}
 
 	ngOnInit() {
+		this.totalBalls = JSON.parse(localStorage.getItem('match_data')).no_of_overs * 6;
 		let elem = this;
 		$('body').on('keyup', '.scoreInput', function () {
 			if ($(this).val() != '') {
@@ -45,6 +53,26 @@ export class InningsPage implements OnInit {
 			$('.total_score').html(elem.wideAndNoBallTotal);
 			console.log(elem.wideAndNoBallTotal);
 		});
+		$('body').on('keyup', '.five_seven_score', function () {
+			let value: any = $(this).find('input').val();
+			if (parseInt(value) > 100) {
+				$(this).find('input').val(100);
+			}
+		});
+
+		this.dataService.observeMe().subscribe((res) => {
+			if (res.type == 'striker_one_update') {
+				this.strikerOne = JSON.parse(localStorage.getItem('striker_one'));
+			} else if (res.type == 'striker_two_update') {
+				this.strikerTwo = JSON.parse(localStorage.getItem('striker_two'));
+			}
+		})
+	}
+
+	ionViewDidEnter() {
+		if (this.overBalls == 6) {
+			this.presentAlert();
+		}
 	}
 
 	setScore(score) {
@@ -175,7 +203,7 @@ export class InningsPage implements OnInit {
 	async manual_score() {
 		this.wideAndNoBallTotal = 0;
 		const alert = await this.alertController.create({
-			cssClass: 'my-custom-class',
+			cssClass: 'five_seven_score',
 			header: 'Score by running',
 			message: '4 and 6 will not be considered boundries',
 			inputs: [
@@ -183,6 +211,7 @@ export class InningsPage implements OnInit {
 					name: 'score',
 					type: 'number',
 					placeholder: 'Score',
+					max: 3
 				}
 			],
 			buttons: [
@@ -213,5 +242,28 @@ export class InningsPage implements OnInit {
 			}
 		});
 		await modal.present();
+	}
+
+	undoStep() {
+		let score = this.scores[this.scores.length - 1].score;
+		this.numberOfBalls--;
+		this.overBalls--;
+		this.totalScore -= score;
+
+		if (this.activeStriker == 1) {
+			this.strikerOneScore += score;
+			this.strikerOneOver++;
+		} else if (this.activeStriker == 2) {
+			this.strikerTwoScore += score;
+			this.strikerTwoOver++;
+		}
+		for (let i = 1; i <= score; i++) {
+			if (this.activeStriker == 2) {
+				this.activeStriker = 1;
+			} else {
+				this.activeStriker = 2;
+			}
+		}
+		this.scores.pop();
 	}
 }

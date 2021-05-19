@@ -138,6 +138,7 @@ export class StartaMatchPage implements OnInit {
 			date_time: this.date_time,
 			match_officials: matchOfficials
 		}
+		localStorage.setItem('match_data', JSON.stringify(formData));
 		if (Object.values(formData).includes(undefined)) {
 			this.utilService.presentToast('Please fill all details', 3000);
 			return false;

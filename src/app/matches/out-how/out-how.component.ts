@@ -1,3 +1,4 @@
+import { DataService } from './../../services/data.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { Component, Input, OnInit } from '@angular/core';
 import { PlayerSelectionComponent } from '../player-selection/player-selection.component';
@@ -10,7 +11,7 @@ import { PlayerSelectionComponent } from '../player-selection/player-selection.c
 export class OutHowComponent implements OnInit {
 
 	@Input() active_striker: any
-	constructor(public alertController: AlertController, public modalController: ModalController) { }
+	constructor(public alertController: AlertController, public modalController: ModalController, public dataService: DataService) { }
 
 	ngOnInit() { }
 
@@ -49,10 +50,14 @@ export class OutHowComponent implements OnInit {
 		modal.onDidDismiss().then((res: any) => {
 			if (this.active_striker == 1) {
 				localStorage.setItem('striker_one', JSON.stringify(res.data.player_profile));
+				this.dataService.fireEvent('striker_one_update');
 			} else {
 				localStorage.setItem('striker_two', JSON.stringify(res.data.player_profile));
+				this.dataService.fireEvent('striker_two_update');
 			}
-			this.modalController.dismiss();
+			setTimeout(() => {
+				this.modalController.dismiss();
+			}, 500);
 		});
 		return await modal.present();
 	}

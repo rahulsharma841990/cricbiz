@@ -63,10 +63,12 @@ export class InningsPage implements OnInit {
 		this.dataService.observeMe().subscribe((res) => {
 			if (res.type == 'striker_one_update') {
 				this.strikerOne = JSON.parse(localStorage.getItem('striker_one'));
+				localStorage.setItem('active_striker', this.strikerOne);
 			} else if (res.type == 'striker_two_update') {
 				this.strikerTwo = JSON.parse(localStorage.getItem('striker_two'));
+				localStorage.setItem('active_striker', this.strikerTwo);
 			}
-		})
+		});
 	}
 
 	ionViewDidEnter() {
@@ -100,6 +102,11 @@ export class InningsPage implements OnInit {
 				} else {
 					this.activeStriker = 2;
 				}
+			}
+			if (this.activeStriker == 1) {
+				localStorage.setItem('active_striker', this.strikerOne);
+			} else if (this.activeStriker == 2) {
+				localStorage.setItem('active_striker', this.strikerTwo);
 			}
 			this.navCtrl.navigateForward('ground-map');
 		}

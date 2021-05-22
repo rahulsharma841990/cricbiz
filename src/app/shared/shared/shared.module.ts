@@ -1,3 +1,4 @@
+import { OutTypeComponent } from './../../matches/out-type/out-type.component';
 import { OutHowComponent } from './../../matches/out-how/out-how.component';
 import { PlayerSelectionComponent } from './../../matches/player-selection/player-selection.component';
 import { CreateMatchOfficialComponent } from './../../matches/create-match-official/create-match-official.component';
@@ -29,7 +30,8 @@ import { QrScannerComponent } from '../qr-scanner/qr-scanner.component';
     CreateMatchOfficialComponent,
     CreateTeamComponent,
     PlayerSelectionComponent,
-    OutHowComponent
+    OutHowComponent,
+    OutTypeComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,8 @@ import { QrScannerComponent } from '../qr-scanner/qr-scanner.component';
     ConfirmRequestedUserComponent,
     CreateTeamComponent,
     PlayerSelectionComponent,
-    OutHowComponent
+    OutHowComponent,
+    OutTypeComponent
   ]
 })
 export class SharedModule { }

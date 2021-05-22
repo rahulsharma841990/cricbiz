@@ -2,6 +2,7 @@ import { DataService } from './../../services/data.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { Component, Input, OnInit } from '@angular/core';
 import { PlayerSelectionComponent } from '../player-selection/player-selection.component';
+import { OutTypeComponent } from '../out-type/out-type.component';
 
 @Component({
 	selector: 'app-out-how',
@@ -58,6 +59,17 @@ export class OutHowComponent implements OnInit {
 			setTimeout(() => {
 				this.modalController.dismiss();
 			}, 500);
+		});
+		return await modal.present();
+	}
+
+	async outOther(type, title) {
+		let modal = await this.modalController.create({
+			component: OutTypeComponent,
+			componentProps: {
+				type: type,
+				title: title
+			}
 		});
 		return await modal.present();
 	}

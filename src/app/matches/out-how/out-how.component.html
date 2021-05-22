@@ -2,8 +2,79 @@
 
 <ion-content class="gray-bg">
 	<ion-card>
-		<ion-card-content (click)="confirm()">
-			<img src="assets/images/outhow.jpg" />
+		<ion-card-content class="out-how-card">
+			<ion-row>
+				<ion-col size="3" (click)="confirm()">
+					<img src="assets/images/outhow/bowled.png">
+					<h6>Bowled</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('cought','Cought')">
+					<img src="assets/images/outhow/caught.png">
+					<h6>Cought</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('cought_behind','Cought Behind')">
+					<img src="assets/images/outhow/caughtbehind.png">
+					<h6>Cought Behind</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('cought_and_bowled','Cought & Bowled')">
+					<img src="assets/images/outhow/caughtandbowled.png">
+					<h6>Cought & Bowled</h6>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="3" (click)="outOther('stumped','Stumped')">
+					<img src="assets/images/outhow/stumped.png">
+					<h6>Stumped</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('run_out','Run out')">
+					<img src="assets/images/outhow/runout.png">
+					<h6>Run out</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('lbw','LBW')">
+					<img src="assets/images/outhow/lbw.png">
+					<h6>LBW</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('hit_wicket','Hit Wicket')">
+					<img src="assets/images/outhow/hitwicket.png">
+					<h6>Hit Wicket</h6>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="3" (click)="outOther('retired_hurt','Retired Hurt')">
+					<img src="assets/images/outhow/retiredhurt.png">
+					<h6>Retired Hurt</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('retired_out','Retired Out')">
+					<img src="assets/images/outhow/retiredout.png">
+					<h6>Retired Out</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('action_out','Action Out (Mankaded)')">
+					<img src="assets/images/outhow/actionout.png">
+					<h6>Action Out (Mankaded)</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('absent','Absent')">
+					<img src="assets/images/outhow/absent.png">
+					<h6>Absent</h6>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="3" (click)="outOther('hit_the_ball_twice','Hit the Ball Twice')">
+					<img src="assets/images/outhow/hitTheballwice.png">
+					<h6>Hit the Ball Twice</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('obstr_the_field','Obstr the Field')">
+					<img src="assets/images/outhow/obstrthefield.png">
+					<h6>Obstr the Field</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('timed_out','Timed Out')">
+					<img src="assets/images/outhow/timedout.png">
+					<h6>Timed Out</h6>
+				</ion-col>
+				<ion-col size="3" (click)="outOther('retired','Retired')">
+					<img src="assets/images/outhow/retired.png">
+					<h6>Retired</h6>
+				</ion-col>
+			</ion-row>
 		</ion-card-content>
 	</ion-card>
 </ion-content>
